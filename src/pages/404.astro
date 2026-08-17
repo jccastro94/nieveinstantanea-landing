@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/content';
+---
+
+<Base titulo={`Página no encontrada | ${site.nombre}`} conJsonLd={false}>
+  <div class="pagina">
+    <h1>¡Ups! Aquí no hay nieve</h1>
+    <p>La página que busca no existe o cambió de lugar.</p>
+    <a class="ni-boton ni-boton--rojo" href="/">Volver al inicio</a>
+  </div>
+</Base>
+
+<style>
+  .pagina {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: var(--ni-margen);
+    text-align: center;
+    background: var(--ni-hueso);
+  }
+  h1 {
+    margin: 0;
+    font: 400 var(--ni-display-2) / 1.02 'Sunday', cursive;
+  }
+  p {
+    margin: 0;
+    font: 400 var(--ni-cuerpo) / 1.65 'Arimo', sans-serif;
+    color: var(--ni-gris);
+  }
+  .ni-boton {
+    padding: 17px 28px;
+  }
+</style>

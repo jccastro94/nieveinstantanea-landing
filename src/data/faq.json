@@ -1,0 +1,34 @@
+{
+  "eyebrow": "PREGUNTAS FRECUENTES",
+  "titulo": "Lo que más nos preguntan",
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es la diferencia entre Nieve Instantánea y Nieve Artificial?",
+      "respuestaHtml": "La <strong>Nieve Instantánea</strong> viene en polvo y crece 200 % cuando le agrega agua: queda fría y húmeda, muy parecida a la nieve real. La <strong>Nieve Artificial</strong> ya viene lista, seca y con escarcha — la esparce y se queda ahí sin humedad. La primera es para jugar y sorprender; la segunda, para decorar y dejar puesto."
+    },
+    {
+      "pregunta": "¿Es segura para los niños y las mascotas?",
+      "respuestaHtml": "Es inodora e hipoalergénica, y contamos con registro sanitario. Es un producto decorativo, no comestible: no se debe ingerir, así que con chiquitos muy pequeños o mascotas curiosas conviene ponerla donde se vea pero no se alcance."
+    },
+    {
+      "pregunta": "¿De qué está hecha?",
+      "respuestaHtml": "De un polímero que absorbe agua y la retiene. Al mojarlo aumenta 200 % su volumen y queda con la textura y la frescura de la nieve real. No es hielo, así que no se derrite ni gotea."
+    },
+    {
+      "pregunta": "¿Cuánto me dura una vez preparada?",
+      "respuestaHtml": "Toda la temporada si la guarda en un recipiente cerrado. Si se seca, le agrega agua otra vez y vuelve a crecer — de ahí el sello de reutilizable en el empaque."
+    },
+    {
+      "pregunta": "¿Mancha los muebles o el piso?",
+      "respuestaHtml": "No tiñe ni deja olor. Se recoge con pala o escoba y lo que quede se limpia con agua. Para superficies de madera, mejor poner una bandeja o un plástico debajo."
+    },
+    {
+      "pregunta": "¿Cuánta nieve me da un empaque?",
+      "respuestaHtml": "Los 100 gr con 1.5 litros de agua le dan alrededor de 1.5 litros de nieve — suficiente para la base de un árbol mediano o un buen centro de mesa. Si quiere cubrir más, calcule un empaque por metro cuadrado."
+    },
+    {
+      "pregunta": "¿Me la venden directamente?",
+      "respuestaHtml": "Al detalle no: la venta la hacen las tiendas. Escríbanos y le decimos dónde encontrarla. Si lo que necesita es volumen para su negocio, evento o municipalidad, <a href=\"#mayoreo\">vea la sección de mayoreo</a>."
+    }
+  ]
+}

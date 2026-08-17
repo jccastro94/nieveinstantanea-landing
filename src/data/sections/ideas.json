@@ -1,0 +1,60 @@
+{
+  "eyebrow": "IDEAS PARA DECORAR",
+  "titulo": "Ideas para su Navidad",
+  "ideas": [
+    {
+      "titulo": "Las huellas de Santa",
+      "textoHtml": "Del árbol a la puerta, con las plantillas de Santa y del reno. La sorpresa de la mañana del 25.",
+      "foto": "huellas-piso-web.jpg",
+      "fotoAlt": "Huellas de botas marcadas en nieve sobre un piso oscuro"
+    },
+    {
+      "titulo": "La villa y el tren",
+      "textoHtml": "La nieve alrededor de la vía y entre las casitas es lo que hace que la villa se vea de verdad.",
+      "foto": "arbol-tren-web.jpg",
+      "fotoAlt": "Árbol de Navidad iluminado con una villa y un tren sobre nieve en la mesa",
+      "fotoPosicion": "50% 72%"
+    },
+    {
+      "titulo": "Blanca navidad",
+      "textoHtml": "Para hacer ángeles de nieve o intentar hacer un muñeco de nieve.",
+      "foto": "nino-munieco-web.jpg",
+      "fotoAlt": "Niño armando un muñeco de nieve con Nieve Instantánea en una bandeja",
+      "fotoPosicion": "50% 62%"
+    },
+    {
+      "titulo": "Zona de fotos",
+      "textoHtml": "Cámara, luces, y nieve. El mejor rincón para las fotos de diciembre. Todos saldrán con una sonrisa.",
+      "foto": "nina-casita-web.jpg",
+      "fotoAlt": "Niña decorando una casita con nieve en una bandeja, rodeada de frascos de Nieve Instantánea"
+    },
+    {
+      "titulo": "Jugar con las manos",
+      "textoHtml": "Fría, suave y sin olor. A los chiquitos les encanta jugar con ella durante horas.",
+      "foto": "nina-vertiendo-web.jpg",
+      "fotoAlt": "Niña pequeña vertiendo nieve desde un tazón azul sobre una bandeja",
+      "fotoPosicion": "50% 58%"
+    },
+    {
+      "titulo": "Ferias y eventos",
+      "textoHtml": "En volumen cubre pisos completos para que la gente camine sobre nieve. <a href=\"#mayoreo\">Vea mayoreo</a>.",
+      "foto": "evento-ninos-web.jpg",
+      "fotoAlt": "Niños jugando en una instalación de nieve en un centro comercial",
+      "fotoPosicion": "50% 60%"
+    },
+    {
+      "titulo": "El centro de mesa",
+      "textoHtml": "Con piñas, esferas y velas. Aguanta puesta toda la cena de fin de año.",
+      "foto": "IMG_2932-web.jpg",
+      "fotoAlt": "Frascos de Nieve Instantánea con esferas doradas sobre nieve"
+    },
+    {
+      "titulo": "El brillo de las coronas",
+      "textoHtml": "La seca con escarcha se queda pegada en coronas, guirnaldas y ramas. Cero humedad, cero mantenimiento.",
+      "foto": "artificial-textura-web.jpg",
+      "fotoAlt": "Puñado de Nieve Artificial con escarcha y copitos de color",
+      "chip": "NIEVE ARTIFICIAL"
+    }
+  ],
+  "notaHtml": "¿La usó de una forma que no está aquí? <a data-wa>Mándenos la foto por WhatsApp</a> y la publicamos."
+}

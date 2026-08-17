@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Nieve Instantánea — tokens del sistema de diseño
+   v1 · Copie este archivo tal cual y consúmalo con var(--ni-*)
+   ========================================================================== */
+
+/* --- Fuentes -------------------------------------------------------------
+   Sunday       → SOLO display: titulares, cifras grandes, wordmark.
+                  Nunca en párrafos, botones, etiquetas ni texto chico.
+   Arimo        → todo el texto, la interfaz y los botones.
+   Los archivos van en /fonts. Conviértalos a .woff2 antes de producción
+   (pesan ~70 % menos y los sirve mejor el navegador).
+------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Sunday';
+  src: url('/fonts/Sunday-Regular.woff2') format('woff2'),
+       url('/fonts/Sunday-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-Regular.woff2') format('woff2'),
+       url('/fonts/Arimo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-Bold.woff2') format('woff2'),
+       url('/fonts/Arimo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* --- Color: familia Nieve Instantánea (crece con agua) ---------------- */
+  --ni-rojo:            #C4211E; /* rojo de la etiqueta. Relleno de TODO botón y badge. */
+  --ni-rojo-hover:      #8E1512; /* hover y estados activos de botones rojos */
+  --ni-rojo-texto:      #B81D1A; /* texto rojo chico sobre blanco o hueso */
+  --ni-rojo-display:    #E8342E; /* SOLO Sunday 24px+ y adornos. Nunca detrás de texto chico. */
+  --ni-rojo-claro:      #FF6B62; /* texto rojo chico sobre negro */
+  --ni-rojo-tenue:      rgba(196, 33, 30, .10); /* fondo de chips rojos */
+
+  /* --- Color: familia Nieve Artificial (lista para usar) ---------------- */
+  --ni-azul:            #0050B6; /* azul del empaque. Botones y chips de este producto. */
+  --ni-azul-hover:      #003C8A;
+  --ni-azul-texto:      #003C8A; /* texto azul chico sobre blanco o --ni-azul-fondo */
+  --ni-azul-fondo:      #EAF0FA; /* fondo de bloques y packshots de Nieve Artificial */
+
+  /* --- Color: neutros --------------------------------------------------- */
+  --ni-negro:           #111213; /* tinta, marcos, secciones oscuras */
+  --ni-negro-pie:       #0A0A0B; /* solo el pie de página */
+  --ni-blanco:          #FFFFFF;
+  --ni-hueso:           #F4F2EF; /* secciones alternas y campos */
+  --ni-gris:            #5C6064; /* texto secundario. AA sobre blanco Y sobre hueso. */
+
+  /* --- Color: acentos --------------------------------------------------- */
+  --ni-verde:           #1F6B3B; /* sellos de confianza, filete de testimonios, punto del CTA */
+  --ni-oro:             #C9A227; /* filetes y badges destacados. Máx. 5 % de la página. */
+
+  /* --- Escala de espacio (múltiplos de 4) ------------------------------- */
+  --ni-space-1:  4px;
+  --ni-space-2:  8px;
+  --ni-space-3:  12px;
+  --ni-space-4:  16px;
+  --ni-space-6:  24px;
+  --ni-space-8:  32px;
+  --ni-space-12: 48px;
+  --ni-space-16: 64px;
+
+  /* --- Radios ----------------------------------------------------------- */
+  --ni-radio-chip:    4px;
+  --ni-radio-campo:   6px;
+  --ni-radio-tarjeta: 10px;
+  --ni-radio-foto:    12px;
+  --ni-radio-pill:    999px;
+
+  /* --- Sombras ---------------------------------------------------------- */
+  --ni-sombra-1: 0 2px 8px rgba(17, 18, 19, .12);
+  --ni-sombra-2: 0 12px 34px rgba(17, 18, 19, .16);
+
+  /* --- Bordes ----------------------------------------------------------- */
+  --ni-marco:        2px solid var(--ni-negro);        /* firma de la marca: tarjetas de producto */
+  --ni-borde-sutil:  1px solid rgba(17, 18, 19, .12);
+  --ni-borde-campo:  1.5px solid rgba(17, 18, 19, .18);
+
+  /* --- Layout ----------------------------------------------------------- */
+  --ni-ancho-max:      1200px;
+  --ni-ancho-max-faq:  860px;
+  --ni-margen:         clamp(20px, 4vw, 64px);  /* margen lateral de página */
+  --ni-seccion-y:      clamp(48px, 7vw, 104px); /* padding vertical de sección */
+  --ni-header-alto:    112px;                   /* usado en scroll-margin-top */
+
+  /* --- Tipografía: tamaños fluidos (móvil → desktop) -------------------- */
+  --ni-display-1:  clamp(44px, 7vw, 96px);    /* h1 del hero · Sunday · lh 1.06 */
+  --ni-display-2:  clamp(34px, 5vw, 64px);    /* h2 de sección · Sunday · lh 1.02 */
+  --ni-display-3:  clamp(24px, 2.8vw, 34px);  /* h3 destacado · Sunday · lh 1.05 */
+  --ni-display-num: clamp(30px, 3.4vw, 44px); /* numerales 01/02/03 · Sunday */
+  --ni-titulo:     clamp(17px, 1.7vw, 21px);  /* h3 de tarjeta · Arimo 700 · lh 1.25 */
+  --ni-subtitulo:  clamp(15px, 1.5vw, 18px);  /* h3 de lista · Arimo 700 · lh 1.3 */
+  --ni-cuerpo-lg:  clamp(16px, 1.5vw, 21px);  /* bajada del hero · Arimo 400 · lh 1.6 */
+  --ni-cuerpo:     clamp(15px, 1.4vw, 18px);  /* bajada de sección · Arimo 400 · lh 1.65 */
+  --ni-cuerpo-sm:  clamp(13.5px, 1.3vw, 15px);/* texto de tarjeta · Arimo 400 · lh 1.6 */
+  --ni-menor:      clamp(12.5px, 1.2vw, 14px);/* notas al pie · Arimo 400 · lh 1.6 */
+  --ni-etiqueta:   clamp(10px, 1vw, 12px);    /* eyebrow · Arimo 700 · tracking .16em · MAYÚSCULAS */
+  --ni-boton:      clamp(14px, 1.3vw, 17px);  /* Arimo 700 */
+
+  /* --- Movimiento ------------------------------------------------------- */
+  --ni-transicion: .15s ease;  /* botones, enlaces, hover — nada más lento */
+}
+
+/* --- Reglas base --------------------------------------------------------- */
+body {
+  margin: 0;
+  background: var(--ni-blanco);
+  color: var(--ni-negro);
+  font-family: 'Arimo', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a       { color: var(--ni-rojo-texto); text-decoration: none; }
+a:hover { color: var(--ni-rojo-hover); }
+
+/* Copos de nieve del hero. Se apagan con prefers-reduced-motion. */
+@keyframes ni-fall {
+  0%   { transform: translateY(-20px); opacity: 0; }
+  15%  { opacity: .9; }
+  100% { transform: translateY(680px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

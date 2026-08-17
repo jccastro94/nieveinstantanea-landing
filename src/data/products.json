@@ -1,0 +1,84 @@
+{
+  "eyebrow": "PRODUCTOS",
+  "titulo": "Nuestros productos",
+  "productos": [
+    {
+      "id": "frasco",
+      "nombre": "Frasco plástico con tapa de corcho",
+      "descripcion": "Nieve Instantánea en polvo: al agregar agua se convierte en nieve.",
+      "familia": "instantanea",
+      "chips": [{ "texto": "CRECE CON AGUA", "estilo": "rojo-tenue" }],
+      "foto": "IMG_2929-web.jpg",
+      "fotoAlt": "Tres frascos plásticos con tapa de corcho llenos de nieve instantánea",
+      "fotoAjuste": "cover",
+      "datos": [
+        { "etiqueta": "Contenido", "valor": "100 gramos" },
+        { "etiqueta": "Agua a agregar", "valor": "1.5 litros" }
+      ]
+    },
+    {
+      "id": "doypack",
+      "nombre": "Bolsa doypack metalizada",
+      "descripcion": "Nieve Instantánea en polvo: al agregar agua se convierte en nieve.",
+      "familia": "instantanea",
+      "chips": [{ "texto": "CRECE CON AGUA", "estilo": "rojo-tenue" }],
+      "foto": "IMG_2933-web.jpg",
+      "fotoAlt": "Dos bolsas resellables de nieve instantánea sobre nieve con piñas",
+      "fotoAjuste": "cover",
+      "datos": [
+        { "etiqueta": "Contenido", "valor": "100 gramos" },
+        { "etiqueta": "Agua a agregar", "valor": "1.5 litros" }
+      ]
+    },
+    {
+      "id": "kit-huellas",
+      "nombre": "Kit Huellas de Santa",
+      "descripcion": "3 piezas: 2 plantillas, una con huella de Santa y otra con huella de reno y elfo, y 1 bolsa de 50 gr de Nieve Instantánea.",
+      "familia": "instantanea",
+      "chips": [
+        { "texto": "CRECE CON AGUA", "estilo": "rojo-tenue" },
+        { "texto": "EL FAVORITO", "estilo": "oro" }
+      ],
+      "foto": "Plantilla-web.jpg",
+      "fotoAlt": "Kit Huellas de Santa: empaque con dos plantillas y una bolsa de nieve instantánea",
+      "fotoAjuste": "contain-hueso",
+      "datos": [
+        { "etiqueta": "Plantillas", "valor": "Santa · reno y elfo" },
+        { "etiqueta": "Nieve incluida", "valor": "50 gramos" }
+      ]
+    },
+    {
+      "id": "artificial",
+      "nombre": "Nieve Artificial · bolsa doypack",
+      "descripcion": "Nieve Artificial con figuras de copo de nieve. Lista para usar, sin agua.",
+      "familia": "artificial",
+      "chips": [
+        { "texto": "LISTA PARA USAR", "estilo": "azul" },
+        { "texto": "NUEVO", "estilo": "azul-tenue" }
+      ],
+      "foto": "artificial-empaque-web.jpg",
+      "fotoAlt": "Bolsa de Nieve Artificial, empaque azul con muñeco de nieve",
+      "fotoAjuste": "contain-azul",
+      "datos": [
+        { "etiqueta": "Contenido", "valor": "200 gramos" },
+        { "etiqueta": "Preparación", "valor": "Ninguna" }
+      ]
+    }
+  ],
+  "comparativo": {
+    "titulo": "¿La roja o la azul?",
+    "bajada": "Son dos nieves distintas. Ninguna es mejor que la otra. Depende de qué quiere lograr.",
+    "opciones": [
+      {
+        "familia": "instantanea",
+        "titulo": "Nieve Instantánea · con agua",
+        "texto": "Crece 200 %, se siente fría y húmeda al tacto. Es la que parece nieve de verdad y la que los chiquitos quieren tocar. Para las huellas de Santa, la base del árbol y jugar."
+      },
+      {
+        "familia": "artificial",
+        "titulo": "Nieve Artificial · lista para usar",
+        "texto": "Seca, suave y con escarcha. Se abre y se esparce, sin agua y sin humedad. Para el árbol, coronas, mesas y todo lo que quiera dejar puesto sin volver a tocarlo."
+      }
+    ]
+  }
+}

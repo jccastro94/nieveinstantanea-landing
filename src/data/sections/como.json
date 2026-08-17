@@ -1,0 +1,13 @@
+{
+  "eyebrow": "CÓMO FUNCIONA · NIEVE INSTANTÁNEA",
+  "titulo": "Solo agrega agua y… ¡magia!",
+  "pasos": [
+    { "titulo": "Vacíe el polvo", "texto": "En un recipiente amplio, sin apretarlo." },
+    { "titulo": "Agregue 1.5 litros de agua fría", "texto": "Mientras más fría el agua, mejor queda la nieve." },
+    { "titulo": "Listo en un minuto", "texto": "¡Revuélvala y siéntala crecer!" }
+  ],
+  "nota": "Si se seca, le vuelve a agregar agua y recupera el volumen. Un frasco le dura toda la temporada.",
+  "foto": "IMG_2936-web.jpg",
+  "fotoAlt": "Frasco de Nieve Instantánea con la pala roja sobre nieve preparada",
+  "fotoRatio": "1400/963"
+}

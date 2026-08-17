@@ -1,0 +1,15 @@
+{
+  "descripcion": "Nieve artificial para decoración navideña. Pyme costarricense, hecha y empacada en Costa Rica.",
+  "columnaSitio": {
+    "titulo": "SITIO",
+    "enlaces": [
+      { "texto": "Productos", "href": "#productos" },
+      { "texto": "Cómo funciona", "href": "#como" },
+      { "texto": "Ideas para decorar", "href": "#ideas" },
+      { "texto": "Preguntas", "href": "#preguntas" },
+      { "texto": "Mayoreo", "href": "#mayoreo" }
+    ]
+  },
+  "columnaContacto": { "titulo": "CONTACTO", "ubicacion": "Costa Rica" },
+  "derechos": "Todos los derechos reservados."
+}

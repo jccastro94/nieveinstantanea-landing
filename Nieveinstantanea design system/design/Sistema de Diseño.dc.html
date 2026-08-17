@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Anton&family=Karla:wght@400;500;700&family=Mountains+of+Christmas:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet"><style>body{margin:0;background:#f0eee9;font-family:system-ui,sans-serif}a{color:#2a78d6}a:hover{color:#1b5aa8}.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 8px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}.dv-intro{max-width:760px;margin:0 0 26px;font:400 12.5px/1.65 system-ui,sans-serif;color:rgba(0,0,0,.55)}.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+@font-face{font-family:'Sunday';src:url('uploads/Sunday-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'Arimo';src:url('uploads/Arimo-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Arimo';src:url('uploads/Arimo-Bold.ttf') format('truetype');font-weight:700;font-display:swap}@keyframes ni-fall{0%{transform:translateY(-10px);opacity:0}20%{opacity:.9}100%{transform:translateY(300px);opacity:0}}@keyframes ni-grow{0%{transform:scale(.4);opacity:.2}60%{transform:scale(1.05);opacity:1}100%{transform:scale(1);opacity:1}}</style></helmet>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Sistema definitivo — Sunday + Arimo, rojo / blanco / negro</span></div>
+<p class="dv-intro">Dirección elegida: navidad clásica sin verse anticuada. Rojo brillante, blanco de nieve y negro de alto contraste; el verde entra solo como acento secundario. Tipografía oficial: Sunday para display, Arimo para todo el texto e interfaz. Todo el sistema son variables CSS y clases utilitarias sobre HTML estático — se edita a mano, sin CMS. Abajo: tokens, componentes, patrones de sección, y el mismo hero en móvil (360) y desktop (1440 a escala).</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="3a"><div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>Sistema completo · mobile-first</div>
+<div class="dv-card" style="width:920px;background:#fff;font-family:'Arimo',Arial,sans-serif;color:#111213">
+
+  <div style="padding:26px 30px;background:#111213;color:#fff;display:flex;align-items:flex-end;justify-content:space-between;gap:20px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font:400 46px/.9 'Sunday','Mountains of Christmas',cursive;color:#fff">Nieve Instantánea</div>
+      <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.2em;color:#E8342E">SISTEMA DE DISEÑO · v1 · TEMPORADA 2026</div>
+    </div>
+    <div style="font:400 11px/1.6 'Arimo',Arial,sans-serif;color:rgba(255,255,255,.65);max-width:30ch;text-align:right">Pyme costarricense desde 2018.<br>Nieve artificial · +200 % de volumen</div>
+  </div>
+
+  <div style="padding:26px 30px 22px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid rgba(17,18,19,.1)">
+    <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.16em;color:rgba(17,18,19,.45)">01 · COLOR</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#C4211E"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--rojo &nbsp;#C4211E<br><span style="font-weight:400;color:rgba(17,18,19,.55)">rojo de la etiqueta. Fondo de todo botón y badge — blanco sobre él da 5.86:1.</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#8E1512"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--rojo-hover &nbsp;#8E1512<br><span style="font-weight:400;color:rgba(17,18,19,.55)">hover de botones</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#E8342E"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--rojo-display &nbsp;#E8342E<br><span style="font-weight:400;color:rgba(17,18,19,.55)">solo tipografía Sunday de 24px+ y detalles decorativos. Nunca detrás de texto chico.</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#FF6B62"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--rojo-claro &nbsp;#FF6B62<br><span style="font-weight:400;color:rgba(17,18,19,.55)">rojo para texto chico sobre negro (6.73:1)</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#111213"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--negro &nbsp;#111213<br><span style="font-weight:400;color:rgba(17,18,19,.55)">tinta, marcos, barra superior</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#fff;border:1px solid rgba(17,18,19,.16)"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--blanco &nbsp;#FFFFFF<br><span style="font-weight:400;color:rgba(17,18,19,.55)">fondo principal</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#F4F2EF"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--hueso &nbsp;#F4F2EF<br><span style="font-weight:400;color:rgba(17,18,19,.55)">secciones alternas, campos</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#0050B6"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--azul &nbsp;#0050B6<br><span style="font-weight:400;color:rgba(17,18,19,.55)">familia Nieve Artificial (empaque azul). Botones y chips de ese producto; blanco encima da 7.4:1.</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#003C8A"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--azul-hover &nbsp;#003C8A<br><span style="font-weight:400;color:rgba(17,18,19,.55)">hover y texto azul chico sobre blanco o #EAF0FA</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#EAF0FA"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--azul-fondo &nbsp;#EAF0FA<br><span style="font-weight:400;color:rgba(17,18,19,.55)">fondo de bloques y packshots de Nieve Artificial</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#1F6B3B"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--verde &nbsp;#1F6B3B<br><span style="font-weight:400;color:rgba(17,18,19,.55)">acento secundario: pino, sellos, confianza</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#C9A227"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--oro &nbsp;#C9A227<br><span style="font-weight:400;color:rgba(17,18,19,.55)">solo filetes y detalles, máx. 5 % de la página</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:6px;background:#5C6064"></div><div style="font:700 10px/1.4 'Arimo',Arial,sans-serif">--gris &nbsp;#5C6064<br><span style="font-weight:400;color:rgba(17,18,19,.55)">texto secundario. AA sobre blanco Y sobre hueso — un tono más claro (#6E7276) falla sobre #F4F2EF.</span></div></div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:2px">
+      <div style="flex:1;padding:11px 13px;border-radius:6px;background:#F4F2EF;font:400 10.5px/1.55 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.7)"><b>Proporción:</b> 70 % blanco · 20 % negro · 8 % rojo · 2 % verde/oro. Si el rojo pasa del 25 % se ve barato.<br><b>Dos familias:</b> el rojo identifica Nieve Instantánea (crece con agua) y el azul #0050B6 identifica Nieve Artificial (lista para usar). El azul solo aparece en lo que pertenece a ese producto — nunca como color de interfaz general.</div>
+      <div style="flex:1;padding:11px 13px;border-radius:6px;background:#F4F2EF;font:400 10.5px/1.55 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.7)"><b>Contraste:</b> todo botón y badge se llena con #C4211E (blanco encima = 5.86:1). #E8342E queda reservado para display Sunday de 24px+ y adornos. Texto rojo chico: #B81D1A sobre blanco o hueso, #FF6B62 sobre negro.</div>
+    </div>
+  </div>
+
+  <div style="padding:24px 30px 22px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid rgba(17,18,19,.1)">
+    <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.16em;color:rgba(17,18,19,.45)">02 · TIPOGRAFÍA</div>
+    <div style="display:flex;gap:24px;align-items:flex-start">
+      <div style="flex:1.15;display:flex;flex-direction:column;gap:8px">
+        <div style="font:400 60px/.9 'Sunday','Mountains of Christmas',cursive;color:#111213">Nieve de verdad<br><span style="color:#E8342E">en un minuto</span></div>
+        <div style="font:700 9.5px/1.5 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.5)">SUNDAY · display<br><span style="font-weight:400">Móvil 34 / 40 px · Desktop 60 / 84 px · line-height .9 · máx. 2 líneas · nunca en mayúsculas forzadas, nunca en párrafos ni botones.</span></div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div style="font:700 22px/1.2 'Arimo',Arial,sans-serif">Titular de sección en Arimo Bold</div>
+        <div style="font:400 15px/1.65 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.82)">Polímero superabsorbente que aumenta su volumen 200 % al contacto con el agua. Inodoro, hipoalergénico y reutilizable — apto para decoración navideña de todo tipo.</div>
+        <div style="font:400 12.5px/1.6 'Arimo',Arial,sans-serif;color:#6E7276">Texto secundario y notas al pie, 12.5 px sobre gris #6E7276.</div>
+        <div style="font:700 10.5px/1 'Arimo',Arial,sans-serif;letter-spacing:.14em;color:#B81D1A">ETIQUETA · 10.5 PX · TRACKING .14EM</div>
+        <div style="font:700 9.5px/1.5 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.5)">ARIMO · texto e interfaz<br><span style="font-weight:400">Escala: 12.5 / 15 / 17 / 22 / 28. Cuerpo 15 px móvil, 17 px desktop. Medida máx. 68 caracteres.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:24px 30px 22px;display:flex;flex-direction:column;gap:13px;border-bottom:1px solid rgba(17,18,19,.1)">
+    <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.16em;color:rgba(17,18,19,.45)">03 · ESPACIO, RADIOS Y SOMBRA</div>
+    <div style="display:flex;align-items:flex-end;gap:7px">
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:4px;height:4px;background:#E8342E"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">4</div></div>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:8px;height:8px;background:#E8342E"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">8</div></div>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:12px;height:12px;background:#E8342E"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">12</div></div>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:16px;height:16px;background:#E8342E"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">16</div></div>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:24px;height:24px;background:#E8342E"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">24</div></div>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:32px;height:32px;background:#E8342E"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">32</div></div>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:48px;height:48px;background:#E8342E"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">48</div></div>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:64px;height:64px;background:#E8342E"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">64</div></div>
+      <div style="margin-left:14px;display:flex;gap:8px;align-items:flex-end">
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:44px;height:44px;border:2px solid #111213;border-radius:4px"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">r-4 chip</div></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:44px;height:44px;border:2px solid #111213;border-radius:8px"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">r-8 tarjeta</div></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:44px;height:44px;border:2px solid #111213;border-radius:999px"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">pill</div></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:44px;height:44px;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(17,18,19,.12)"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">sombra-1</div></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center"><div style="width:44px;height:44px;border-radius:8px;background:#fff;box-shadow:0 10px 28px rgba(17,18,19,.18)"></div><div style="font:400 8.5px/1 'Arimo',Arial,sans-serif;color:#6E7276">sombra-2</div></div>
+      </div>
+    </div>
+    <div style="font:400 10.5px/1.55 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.65)">Márgenes de página: 20 px móvil, 64 px desktop, contenido máx. 1200 px. Separación entre secciones: 48 px móvil, 96 px desktop. El marco negro de 2px es la firma de la marca — va en tarjetas de producto, botones secundarios y fotos destacadas, igual que en la etiqueta.</div>
+  </div>
+
+  <div style="padding:24px 30px 22px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid rgba(17,18,19,.1)">
+    <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.16em;color:rgba(17,18,19,.45)">04 · COMPONENTES</div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+      <div style="display:flex;align-items:center;gap:9px;padding:15px 22px;border-radius:999px;background:#E8342E;color:#fff;font:700 15px/1 'Arimo',Arial,sans-serif;box-shadow:0 4px 14px rgba(232,52,46,.3)"><span style="width:8px;height:8px;border-radius:50%;background:#8FF0A8;display:block"></span>Cotizar por WhatsApp</div>
+      <div style="padding:15px 22px;border-radius:999px;border:2px solid #111213;color:#111213;font:700 15px/1 'Arimo',Arial,sans-serif">Ver productos</div>
+      <div style="padding:15px 22px;border-radius:999px;background:#111213;color:#fff;font:700 15px/1 'Arimo',Arial,sans-serif">Ser distribuidor</div>
+      <div style="font:700 15px/1 'Arimo',Arial,sans-serif;color:#B81D1A;text-decoration:underline;text-underline-offset:5px">Descargar catálogo</div>
+      <div style="padding:15px 22px;border-radius:999px;background:rgba(17,18,19,.1);color:rgba(17,18,19,.4);font:700 15px/1 'Arimo',Arial,sans-serif">Deshabilitado</div>
+    </div>
+    <div style="font:400 10.5px/1.5 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.6)">Altura mínima 48 px en móvil. Un solo botón rojo por pantalla visible. Hover: fondo → #B81D1A y desplazamiento de 1px hacia arriba, 150 ms.</div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:7px">
+      <span style="padding:7px 13px;border-radius:4px;background:#111213;color:#fff;font:700 11px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">+200 % VOLUMEN</span>
+      <span style="padding:7px 13px;border-radius:4px;background:rgba(232,52,46,.1);color:#B81D1A;font:700 11px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">HIPOALERGÉNICO</span>
+      <span style="padding:7px 13px;border-radius:4px;background:rgba(31,107,59,.12);color:#1F6B3B;font:700 11px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">REUTILIZABLE</span>
+      <span style="padding:7px 13px;border-radius:4px;border:1.5px solid rgba(17,18,19,.2);color:#111213;font:700 11px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">REGISTRO SANITARIO</span>
+      <span style="padding:7px 13px;border-radius:4px;border:1.5px solid rgba(17,18,19,.2);color:#111213;font:700 11px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">FACTURA ELECTRÓNICA</span>
+      <span style="padding:7px 13px;border-radius:4px;background:#C9A227;color:#111213;font:700 11px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">CONSIGNACIÓN 100 %</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+      <div style="border:2px solid #111213;border-radius:8px;overflow:hidden;background:#fff">
+        <img loading="lazy" decoding="async" src="assets/IMG_9885-thumb.jpg" alt="Botella de vidrio con corcho" style="display:block;width:100%;height:110px;object-fit:cover">
+        <div style="padding:12px 13px 14px;display:flex;flex-direction:column;gap:5px">
+          <div style="font:700 14px/1.25 'Arimo',Arial,sans-serif">Botella 100 gr</div>
+          <div style="font:400 11.5px/1.5 'Arimo',Arial,sans-serif;color:#6E7276">Rinde 1.5 L de nieve. Empaque de regalo.</div>
+          <div style="font:700 12px/1 'Arimo',Arial,sans-serif;color:#B81D1A;margin-top:3px">Precio mayoreo →</div>
+        </div>
+      </div>
+      <div style="border:2px solid #111213;border-radius:8px;overflow:hidden;background:#fff">
+        <img loading="lazy" decoding="async" src="assets/IMG_9863-thumb.jpg" alt="Bolsa de 100 gr" style="display:block;width:100%;height:110px;object-fit:cover">
+        <div style="padding:12px 13px 14px;display:flex;flex-direction:column;gap:5px">
+          <div style="font:700 14px/1.25 'Arimo',Arial,sans-serif">Bolsa 100 gr</div>
+          <div style="font:400 11.5px/1.5 'Arimo',Arial,sans-serif;color:#6E7276">La presentación de mayor rotación.</div>
+          <div style="font:700 12px/1 'Arimo',Arial,sans-serif;color:#B81D1A;margin-top:3px">Precio mayoreo →</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="border-radius:8px;background:#F4F2EF;padding:12px 13px;display:flex;flex-direction:column;gap:7px">
+          <div style="font:700 9.5px/1 'Arimo',Arial,sans-serif;letter-spacing:.12em;color:rgba(17,18,19,.5)">EMPRESA</div>
+          <div style="background:#fff;border:1.5px solid rgba(17,18,19,.18);border-radius:6px;padding:11px 12px;font:400 12.5px/1 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.35)">Nombre del negocio</div>
+        </div>
+        <div style="border-radius:8px;background:#F4F2EF;padding:12px 13px;display:flex;flex-direction:column;gap:7px">
+          <div style="font:700 9.5px/1 'Arimo',Arial,sans-serif;letter-spacing:.12em;color:#B81D1A">CANTIDAD · REQUERIDO</div>
+          <div style="background:#fff;border:1.5px solid #E8342E;border-radius:6px;padding:11px 12px;font:400 12.5px/1 'Arimo',Arial,sans-serif">240 unidades</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="border-left:3px solid #1F6B3B;background:#F4F2EF;border-radius:0 8px 8px 0;padding:12px 13px;display:flex;flex-direction:column;gap:7px">
+          <div style="font:400 13px/1.55 'Arimo',Arial,sans-serif">“Nos devuelven el 100 % de lo que no se vende. Cero riesgo para la tienda.”</div>
+          <div style="font:700 9.5px/1 'Arimo',Arial,sans-serif;letter-spacing:.1em;color:#6E7276">COMPRAS · CADENA REGIONAL</div>
+        </div>
+        <div style="border-radius:8px;border:1.5px solid rgba(17,18,19,.14);padding:12px 13px;display:flex;align-items:center;justify-content:space-between;gap:8px">
+          <div style="font:700 12.5px/1.3 'Arimo',Arial,sans-serif">¿Cuánta agua necesita?</div>
+          <div style="font:700 16px/1 'Arimo',Arial,sans-serif;color:#E8342E">+</div>
+        </div>
+      </div>
+    </div>
+    <div style="font:400 10.5px/1.5 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.6)">Tarjeta de producto = foto 4:3 + marco negro 2px. Campos = fondo hueso, borde 1.5px, foco en rojo. Acordeón para el FAQ. Testimonio con filete verde, nunca rojo.</div>
+  </div>
+
+  <div style="padding:24px 30px 26px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid rgba(17,18,19,.1)">
+    <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.16em;color:rgba(17,18,19,.45)">05 · PATRONES DE SECCIÓN · MÓVIL 360 → DESKTOP</div>
+    <div style="display:flex;gap:20px;align-items:flex-start">
+
+      <div style="width:360px;flex:none;border:1px solid rgba(17,18,19,.16);border-radius:14px;overflow:hidden;background:#fff">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#111213;color:#fff">
+          <div style="font:400 22px/1 'Sunday','Mountains of Christmas',cursive">Nieve Instantánea</div>
+          <div style="display:flex;flex-direction:column;gap:5px"><span style="width:20px;height:2px;background:#fff;display:block"></span><span style="width:20px;height:2px;background:#fff;display:block"></span></div>
+        </div>
+        <div style="position:relative;overflow:hidden">
+          <img loading="lazy" decoding="async" src="assets/IMG_9883-web.jpg" alt="Bolsa de nieve instantánea sobre nieve" style="display:block;width:100%;height:250px;object-fit:cover">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(17,18,19,.8),rgba(17,18,19,.05) 58%)"></div>
+          <span style="position:absolute;left:18%;top:0;width:4px;height:4px;border-radius:50%;background:#fff;animation:ni-fall 6s linear infinite"></span>
+          <span style="position:absolute;left:64%;top:0;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.8;animation:ni-fall 7.5s linear infinite 2s"></span>
+          <div style="position:absolute;left:20px;right:20px;bottom:16px;display:flex;flex-direction:column;gap:9px">
+            <div style="align-self:flex-start;padding:6px 10px;border-radius:4px;background:#E8342E;color:#fff;font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.1em">TEMPORADA NOV–ENE</div>
+            <div style="font:400 38px/.9 'Sunday','Mountains of Christmas',cursive;color:#fff">Nieve de verdad en un minuto</div>
+          </div>
+        </div>
+        <div style="padding:20px;display:flex;flex-direction:column;gap:14px">
+          <div style="font:400 15px/1.6 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.8)">Solo agrega agua y el polvo aumenta 200 % su volumen. Inodoro, hipoalergénico y reutilizable.</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;justify-content:center;gap:9px;padding:16px;border-radius:999px;background:#E8342E;color:#fff;font:700 15px/1 'Arimo',Arial,sans-serif"><span style="width:8px;height:8px;border-radius:50%;background:#8FF0A8;display:block"></span>Cotizar por WhatsApp</div>
+            <div style="text-align:center;padding:16px;border-radius:999px;border:2px solid #111213;font:700 15px/1 'Arimo',Arial,sans-serif">Quiero ser distribuidor</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+            <div style="background:#F4F2EF;border-radius:8px;padding:12px"><div style="font:400 26px/1 'Sunday','Mountains of Christmas',cursive;color:#E8342E">+200%</div><div style="font:400 10.5px/1.35 'Arimo',Arial,sans-serif;color:#6E7276;margin-top:5px">de volumen con agua</div></div>
+            <div style="background:#F4F2EF;border-radius:8px;padding:12px"><div style="font:400 26px/1 'Sunday','Mountains of Christmas',cursive;color:#1F6B3B">100%</div><div style="font:400 10.5px/1.35 'Arimo',Arial,sans-serif;color:#6E7276;margin-top:5px">consignación, sin riesgo</div></div>
+          </div>
+        </div>
+        <div style="padding:0 20px 20px;display:flex;flex-direction:column;gap:11px">
+          <div style="font:700 20px/1.2 'Arimo',Arial,sans-serif">Tres presentaciones</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px">
+            <div style="border:2px solid #111213;border-radius:8px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/IMG_9885-thumb.jpg" alt="Botella" style="display:block;width:100%;height:66px;object-fit:cover"><div style="padding:8px;font:700 11px/1.2 'Arimo',Arial,sans-serif">Botella</div></div>
+            <div style="border:2px solid #111213;border-radius:8px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/IMG_9863-thumb.jpg" alt="Bolsa" style="display:block;width:100%;height:66px;object-fit:cover"><div style="padding:8px;font:700 11px/1.2 'Arimo',Arial,sans-serif">Bolsa</div></div>
+            <div style="border:2px solid #111213;border-radius:8px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/Plantilla-thumb.png" alt="Kit Huellas de Santa" style="display:block;width:100%;height:66px;object-fit:cover;object-position:top;background:#fff"><div style="padding:8px;font:700 11px/1.2 'Arimo',Arial,sans-serif">Kit Huellas</div></div>
+          </div>
+        </div>
+        <div style="padding:20px;background:#111213;color:#fff;display:flex;flex-direction:column;gap:11px">
+          <div style="font:400 28px/.95 'Sunday','Mountains of Christmas',cursive">Solo agrega agua y… ¡magia!</div>
+          <div style="font:400 13px/1.6 'Arimo',Arial,sans-serif;color:rgba(255,255,255,.72)">Le hacemos una demostración en su local, sin costo.</div>
+          <div style="align-self:flex-start;padding:14px 18px;border-radius:999px;background:#E8342E;color:#fff;font:700 13px/1 'Arimo',Arial,sans-serif">7180-5080</div>
+        </div>
+      </div>
+
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:14px">
+        <div style="height:325px;overflow:hidden;border:1px solid rgba(17,18,19,.16);border-radius:10px">
+        <div style="width:1440px;transform:scale(.3313);transform-origin:top left;background:#fff">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:26px 64px;background:#111213;color:#fff">
+            <div style="font:400 44px/1 'Sunday','Mountains of Christmas',cursive">Nieve Instantánea</div>
+            <div style="display:flex;gap:40px;align-items:center;font:700 17px/1 'Arimo',Arial,sans-serif">
+              <span>Productos</span><span>Distribuidores</span><span>Blog</span><span>Preguntas</span>
+              <span style="padding:18px 28px;border-radius:999px;background:#E8342E">Cotizar</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch">
+            <div style="padding:72px 64px;display:flex;flex-direction:column;gap:26px;justify-content:center">
+              <div style="align-self:flex-start;padding:10px 16px;border-radius:5px;background:rgba(232,52,46,.1);color:#B81D1A;font:700 15px/1 'Arimo',Arial,sans-serif;letter-spacing:.12em">TEMPORADA NOV–ENE · DESDE 2018</div>
+              <div style="font:400 108px/.88 'Sunday','Mountains of Christmas',cursive">Nieve de verdad<br><span style="color:#E8342E">en un minuto</span></div>
+              <div style="font:400 25px/1.6 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.78);max-width:44ch">Solo agrega agua y el polvo aumenta 200 % su volumen. Inodoro, hipoalergénico y reutilizable.</div>
+              <div style="display:flex;gap:16px;margin-top:4px">
+                <div style="display:flex;align-items:center;gap:14px;padding:26px 34px;border-radius:999px;background:#E8342E;color:#fff;font:700 24px/1 'Arimo',Arial,sans-serif"><span style="width:13px;height:13px;border-radius:50%;background:#8FF0A8;display:block"></span>Cotizar por WhatsApp</div>
+                <div style="padding:26px 34px;border-radius:999px;border:3px solid #111213;font:700 24px/1 'Arimo',Arial,sans-serif">Ver productos</div>
+              </div>
+              <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
+                <span style="padding:11px 18px;border-radius:5px;background:#111213;color:#fff;font:700 15px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">+200 % VOLUMEN</span>
+                <span style="padding:11px 18px;border-radius:5px;background:rgba(31,107,59,.12);color:#1F6B3B;font:700 15px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">REUTILIZABLE</span>
+                <span style="padding:11px 18px;border-radius:5px;background:#C9A227;color:#111213;font:700 15px/1 'Arimo',Arial,sans-serif;letter-spacing:.06em">CONSIGNACIÓN 100 %</span>
+              </div>
+            </div>
+            <div style="position:relative;overflow:hidden;min-height:640px">
+              <img loading="lazy" decoding="async" src="assets/IMG_9883-2-web.jpg" alt="Bolsa de nieve instantánea sobre nieve con luces" style="display:block;width:100%;height:100%;object-fit:cover">
+              <span style="position:absolute;left:26%;top:0;width:9px;height:9px;border-radius:50%;background:#fff;animation:ni-fall 7s linear infinite"></span>
+              <span style="position:absolute;left:72%;top:0;width:7px;height:7px;border-radius:50%;background:#fff;opacity:.8;animation:ni-fall 9s linear infinite 2.5s"></span>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div style="font:400 10.5px/1.5 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.6)">Arriba: maqueta real de 1440 px a escala 33 %. Hero desktop: retícula 12 columnas, texto en 6 y foto sangrada a la derecha en 6. En móvil la foto sube y el texto se monta encima con degradado negro. El mismo par de CTA en los dos tamaños; en móvil se apilan a ancho completo.</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:11px">
+          <div style="border-radius:8px;background:#F4F2EF;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font:400 20px/1 'Sunday','Mountains of Christmas',cursive;color:#E8342E">01</div><div style="font:700 12.5px/1.3 'Arimo',Arial,sans-serif">Vacíe el polvo</div><div style="font:400 11px/1.5 'Arimo',Arial,sans-serif;color:#6E7276">En un recipiente amplio, sin comprimir.</div></div>
+          <div style="border-radius:8px;background:#F4F2EF;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font:400 20px/1 'Sunday','Mountains of Christmas',cursive;color:#E8342E">02</div><div style="font:700 12.5px/1.3 'Arimo',Arial,sans-serif">Agregue 1.5 L de agua</div><div style="font:400 11px/1.5 'Arimo',Arial,sans-serif;color:#6E7276">Agua a temperatura ambiente.</div></div>
+          <div style="border-radius:8px;background:#F4F2EF;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font:400 20px/1 'Sunday','Mountains of Christmas',cursive;color:#E8342E">03</div><div style="font:700 12.5px/1.3 'Arimo',Arial,sans-serif">Listo en un minuto</div><div style="font:400 11px/1.5 'Arimo',Arial,sans-serif;color:#6E7276">Se puede guardar y reutilizar.</div></div>
+        </div>
+        <div style="font:400 10.5px/1.5 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.6)">Patrón “cómo funciona”: 3 columnas en desktop, carrusel deslizable en móvil. Número en Sunday rojo — es el único uso decorativo de la display fuera de titulares.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:24px 30px 22px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid rgba(17,18,19,.1)">
+    <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.16em;color:rgba(17,18,19,.45)">06 · MATERIAL EXISTENTE · PARA BLOG Y REDES, NO PARA HERO</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px">
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/Noe-thumb.png" alt="Arte de etiqueta en español" style="display:block;width:100%;height:92px;object-fit:contain;background:#fff;border:1px solid rgba(17,18,19,.12);border-radius:6px"><div style="font:400 9px/1.3 'Arimo',Arial,sans-serif;color:#6E7276">etiqueta ES</div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/2-thumb.png" alt="Arte de etiqueta en inglés" style="display:block;width:100%;height:92px;object-fit:contain;background:#fff;border:1px solid rgba(17,18,19,.12);border-radius:6px"><div style="font:400 9px/1.3 'Arimo',Arial,sans-serif;color:#6E7276">etiqueta EN</div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/1-thumb.jpg" alt="Pieza de redes" style="display:block;width:100%;height:92px;object-fit:cover;border:1px solid rgba(17,18,19,.12);border-radius:6px"><div style="font:400 9px/1.3 'Arimo',Arial,sans-serif;color:#6E7276">redes 9:16</div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/2-f03139f0-thumb.jpg" alt="Pieza de redes con atributos" style="display:block;width:100%;height:92px;object-fit:cover;border:1px solid rgba(17,18,19,.12);border-radius:6px"><div style="font:400 9px/1.3 'Arimo',Arial,sans-serif;color:#6E7276">redes 9:16</div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/3-thumb.jpg" alt="Pieza de redes del kit" style="display:block;width:100%;height:92px;object-fit:cover;border:1px solid rgba(17,18,19,.12);border-radius:6px"><div style="font:400 9px/1.3 'Arimo',Arial,sans-serif;color:#6E7276">redes 9:16</div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/IMG_9864-thumb.jpg" alt="Bolsa sobre nieve" style="display:block;width:100%;height:92px;object-fit:cover;border:1px solid rgba(17,18,19,.12);border-radius:6px"><div style="font:400 9px/1.3 'Arimo',Arial,sans-serif;color:#6E7276">foto producto</div></div>
+    </div>
+    <div style="font:400 10.5px/1.55 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.65)">Regla de foto: todas las tomas actuales son horizontales (~1.36). Los espacios de imagen se mantienen en 4:3 o más anchos, y cuando la caja resulta más alta se fija <b>object-position</b> hacia el lado del producto para no recortarlo. Las piezas con texto quemado sirven como entradas del blog. Para la web hacen falta 6–8 fotos limpias: cada producto sobre nieve con el mismo fondo y luz, más una foto de nieve creciendo y una de instalación en tienda. Sin eso el sistema se sostiene, pero se ve inconsistente.</div>
+  </div>
+
+  <div style="padding:24px 30px 28px;display:grid;grid-template-columns:1fr 1fr;gap:22px">
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.16em;color:rgba(17,18,19,.45)">07 · MOVIMIENTO E ICONOGRAFÍA</div>
+      <div style="font:400 12px/1.65 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.75)">Copos cayendo: solo en el hero, 3–5 partículas, y se apagan con <b>prefers-reduced-motion</b>.<br>Entrada de sección: fade + 12 px hacia arriba, 250 ms ease-out, una sola vez.<br>Botones y enlaces: 150 ms. Nada rebota, nada gira.<br>Íconos: Lucide, línea de 1.75 px, tamaño 20/24. Íconos en negro; en rojo solo dentro de un botón. El muñeco de nieve y el sello reutilizable del empaque se conservan tal cual — no se redibujan.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <div style="font:700 10px/1 'Arimo',Arial,sans-serif;letter-spacing:.16em;color:rgba(17,18,19,.45)">08 · TONO DE VOZ</div>
+      <div style="font:400 12px/1.65 'Arimo',Arial,sans-serif;color:rgba(17,18,19,.75)">Usted, cálido y concreto. La magia se menciona una vez por página, no en cada sección.<br><b style="color:#1F6B3B">Sí:</b> “Solo agrega agua y… ¡magia!” · “Le devolvemos el 100 % de lo que no se venda.” · “Nieve de verdad en un minuto.”<br><b style="color:#B81D1A">No:</b> “Soluciones integrales de decoración estacional.” · “La mejor nieve del mercado.” · Signos de exclamación en cadena.<br>Números siempre con cifra y unidad: 200 %, 1.5 L, 100 gr. Nada de “muchísimo”.</div>
+    </div>
+  </div>
+
+</div></div>
+
+</div>
+<p class="dv-next">Siguiente paso natural: armar la landing completa de <a class="dv-oid" href="#3a">3a</a> como archivo estático (index.html + tokens en CSS), y de ahí la página de producto, contacto y FAQ. Dime si el mercado es Costa Rica o México antes de escribir la copia final.</p>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Con la marca real — etiqueta, fotos y datos del PDF</span></div>
+<p class="dv-intro">Lo que saqué del empaque: rojo de etiqueta, marco negro grueso, tipografía navideña dibujada a mano (Mountains of Christmas se le acerca mucho; si tienen el archivo original del logo, la sustituimos), y fotografía sobre nieve blanca con luces bokeh. Del PDF: pyme costarricense desde 2018, +200 % de volumen, inodoro e hipoalergénico, registro sanitario, factura electrónica, código de barras, consignación 100 %, tres productos (botella, bolsa, Kit Huellas de Santa), WhatsApp 7180-5080. Nota: el PDF dice Costa Rica y en el cuestionario pusieron México — confírmame el mercado y ajusto la copia y los envíos.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a"><div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Etiqueta — la marca tal cual, rojo dominante</div>
+<div class="dv-card" style="width:452px;background:#fff;font-family:'DM Sans',system-ui,sans-serif;color:#141414">
+  <div style="padding:18px;background:#0E0E0E">
+    <div style="border:3px solid #0E0E0E;background:#C4211E;padding:18px 20px 16px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 12% 22%,#fff 1.6px,transparent 1.7px),radial-gradient(circle at 34% 68%,#fff 2.4px,transparent 2.5px),radial-gradient(circle at 72% 18%,#fff 1.8px,transparent 1.9px),radial-gradient(circle at 88% 55%,#fff 2.8px,transparent 2.9px),radial-gradient(circle at 55% 88%,#fff 1.4px,transparent 1.5px);opacity:.85"></div>
+      <div style="position:relative;font:700 34px/.88 'Mountains of Christmas',cursive;color:#fff;letter-spacing:.01em">NIEVE<br><span style="font-size:24px">INSTANTANEA</span></div>
+      <div style="position:relative;margin-top:10px;font:500 9.5px/1 'DM Sans',sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.85)">SISTEMA 2A · ETIQUETA</div>
+    </div>
+  </div>
+
+  <div style="padding:18px 22px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,20,20,.45)">Color · tomado del empaque</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:4px;background:#C4211E"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#C4211E<br><span style="font-weight:400;color:rgba(20,20,20,.5)">rojo etiqueta</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:4px;background:#8E1512"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#8E1512<br><span style="font-weight:400;color:rgba(20,20,20,.5)">rojo oscuro</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:4px;background:#0E0E0E"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#0E0E0E<br><span style="font-weight:400;color:rgba(20,20,20,.5)">marco / tinta</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:4px;background:#fff;border:1px solid rgba(20,20,20,.15)"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#FFFFFF<br><span style="font-weight:400;color:rgba(20,20,20,.5)">nieve</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:4px;background:#F4F1EE"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#F4F1EE<br><span style="font-weight:400;color:rgba(20,20,20,.5)">fondo suave</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:4px;background:#4C8B3B"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#4C8B3B<br><span style="font-weight:400;color:rgba(20,20,20,.5)">verde reciclable</span></div></div>
+    </div>
+    <div style="font:400 10.5px/1.5 'DM Sans',sans-serif;color:rgba(20,20,20,.55)">El verde solo para el sello reutilizable/reciclable, nunca como color de interfaz.</div>
+  </div>
+
+  <div style="padding:0 22px 18px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,20,20,.45)">Tipografía</div>
+    <div style="font:700 40px/.9 'Mountains of Christmas',cursive">Nieve en 1 minuto</div>
+    <div style="font:500 9.5px/1 'JetBrains Mono',monospace;color:rgba(20,20,20,.45)">Mountains of Christmas 700 · solo títulos y wordmark · nunca en párrafos</div>
+    <div style="font:400 14px/1.6 'DM Sans',sans-serif;max-width:40ch">Polímero superabsorbente que aumenta su volumen 200 % al contacto con el agua. Inodoro e hipoalergénico, ideal para decoración navideña de todo tipo.</div>
+    <div style="font:500 9.5px/1 'JetBrains Mono',monospace;color:rgba(20,20,20,.45)">DM Sans 400/500/700 · texto e interfaz · 14/16/18</div>
+  </div>
+
+  <div style="padding:0 22px 18px;display:flex;flex-direction:column;gap:11px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,20,20,.45)">Componentes</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <div style="display:flex;align-items:center;gap:8px;padding:13px 18px;border-radius:6px;background:#C4211E;color:#fff;font:700 13px/1 'DM Sans',sans-serif;border:2px solid #0E0E0E"><span style="width:7px;height:7px;border-radius:50%;background:#8FF0A8;display:block"></span>Cotizar por WhatsApp</div>
+      <div style="padding:13px 18px;border-radius:6px;border:2px solid #0E0E0E;color:#0E0E0E;font:700 13px/1 'DM Sans',sans-serif">Ver productos</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      <span style="padding:6px 11px;border-radius:4px;background:#0E0E0E;color:#fff;font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.06em">+200 % VOLUMEN</span>
+      <span style="padding:6px 11px;border-radius:4px;background:rgba(196,33,30,.1);color:#8E1512;font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.06em">HIPOALERGÉNICO</span>
+      <span style="padding:6px 11px;border-radius:4px;background:rgba(76,139,59,.14);color:#2F5E23;font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.06em">REUTILIZABLE</span>
+      <span style="padding:6px 11px;border-radius:4px;background:rgba(14,14,14,.07);color:#0E0E0E;font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.06em">REGISTRO SANITARIO</span>
+    </div>
+    <div style="display:flex;gap:10px">
+      <div style="flex:1;background:#fff;border:2px solid #0E0E0E;border-radius:8px;overflow:hidden">
+        <img loading="lazy" decoding="async" src="assets/IMG_9864-thumb.jpg" alt="Bolsa de nieve instantánea de 100 gr sobre nieve" style="display:block;width:100%;height:96px;object-fit:cover">
+        <div style="padding:10px 11px 12px;display:flex;flex-direction:column;gap:4px">
+          <div style="font:700 15px/1 'Mountains of Christmas',cursive">Bolsa 100 gr</div>
+          <div style="font:400 11px/1.45 'DM Sans',sans-serif;color:rgba(20,20,20,.6)">Agregue 1.5 litros de agua</div>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+        <div style="border:2px solid #0E0E0E;border-radius:8px;padding:10px 11px;display:flex;flex-direction:column;gap:5px">
+          <div style="font:700 8.5px/1 'DM Sans',sans-serif;letter-spacing:.12em;color:rgba(20,20,20,.5)">EMPRESA</div>
+          <div style="font:400 12px/1 'DM Sans',sans-serif;color:rgba(20,20,20,.35)">Nombre del negocio</div>
+        </div>
+        <div style="background:#F4F1EE;border-radius:8px;padding:11px 12px;display:flex;flex-direction:column;gap:6px">
+          <div style="font:400 12px/1.5 'DM Sans',sans-serif">“Nos devuelven el 100 % de lo no vendido. Cero riesgo.”</div>
+          <div style="font:700 8.5px/1 'JetBrains Mono',monospace;color:#8E1512">COMPRAS · CADENA REGIONAL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 22px 18px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,20,20,.45)">Material existente · así comunican hoy</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/Noe-thumb.png" alt="Arte de la etiqueta en español" style="display:block;width:100%;height:88px;object-fit:contain;background:#fff;border:1px solid rgba(20,20,20,.12);border-radius:6px"><div style="font:500 8.5px/1.3 'JetBrains Mono',monospace;color:rgba(20,20,20,.5)">etiqueta ES</div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/2-thumb.png" alt="Arte de la etiqueta en inglés" style="display:block;width:100%;height:88px;object-fit:contain;background:#fff;border:1px solid rgba(20,20,20,.12);border-radius:6px"><div style="font:500 8.5px/1.3 'JetBrains Mono',monospace;color:rgba(20,20,20,.5)">etiqueta EN</div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/1-thumb.jpg" alt="Pieza de redes: Nieve en 1 minuto" style="display:block;width:100%;height:88px;object-fit:cover;border:1px solid rgba(20,20,20,.12);border-radius:6px"><div style="font:500 8.5px/1.3 'JetBrains Mono',monospace;color:rgba(20,20,20,.5)">redes 9:16</div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><img loading="lazy" decoding="async" src="assets/2-f03139f0-thumb.jpg" alt="Pieza de redes con atributos del producto" style="display:block;width:100%;height:88px;object-fit:cover;border:1px solid rgba(20,20,20,.12);border-radius:6px"><div style="font:500 8.5px/1.3 'JetBrains Mono',monospace;color:rgba(20,20,20,.5)">redes 9:16</div></div>
+    </div>
+    <div style="font:400 10.5px/1.5 'DM Sans',sans-serif;color:rgba(20,20,20,.55)">Estas piezas traen texto quemado en la imagen — sirven para el blog y redes, no para los espacios de foto de la web. Para la web hacen falta fotos limpias por producto, todas con el mismo fondo y recorte.</div>
+  </div>
+
+  <div style="padding:0 22px 22px;display:flex;flex-direction:column;gap:10px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,20,20,.45)">Landing · 360px</div>
+    <div style="width:360px;max-width:100%;border:1px solid rgba(20,20,20,.18);border-radius:14px;overflow:hidden;background:#fff">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#0E0E0E;color:#fff">
+        <div style="font:700 19px/1 'Mountains of Christmas',cursive">Nieve Instantánea</div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="width:19px;height:2px;background:#fff;display:block"></span><span style="width:19px;height:2px;background:#fff;display:block"></span></div>
+      </div>
+      <div style="position:relative;overflow:hidden">
+        <img loading="lazy" decoding="async" src="assets/IMG_9883-web.jpg" alt="Bolsa de nieve instantánea sobre nieve" style="display:block;width:100%;height:230px;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,14,.72),rgba(14,14,14,.05) 55%)"></div>
+        <span style="position:absolute;left:20%;top:0;width:4px;height:4px;border-radius:50%;background:#fff;animation:ni-fall 6s linear infinite"></span>
+        <span style="position:absolute;left:66%;top:0;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.8;animation:ni-fall 7.5s linear infinite 2s"></span>
+        <div style="position:absolute;left:16px;right:16px;bottom:14px;display:flex;flex-direction:column;gap:8px">
+          <div style="align-self:flex-start;padding:5px 9px;border-radius:5px;background:#C4211E;color:#fff;font:700 9.5px/1 'DM Sans',sans-serif;letter-spacing:.1em">TEMPORADA NOV–ENE</div>
+          <div style="font:700 34px/.9 'Mountains of Christmas',cursive;color:#fff">Nieve de verdad en 1 minuto</div>
+        </div>
+      </div>
+      <div style="padding:18px 16px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:400 13.5px/1.6 'DM Sans',sans-serif;color:rgba(20,20,20,.72)">Solo agrega agua y el polvo aumenta 200 % su volumen. Inodoro, hipoalergénico y reutilizable.</div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;border-radius:6px;background:#C4211E;color:#fff;font:700 14px/1 'DM Sans',sans-serif;border:2px solid #0E0E0E"><span style="width:7px;height:7px;border-radius:50%;background:#8FF0A8;display:block"></span>Cotizar por WhatsApp</div>
+          <div style="text-align:center;padding:15px;border-radius:6px;border:2px solid #0E0E0E;font:700 14px/1 'DM Sans',sans-serif">Quiero ser distribuidor</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:2px">
+          <div style="background:#F4F1EE;border-radius:8px;padding:11px"><div style="font:700 19px/1 'Mountains of Christmas',cursive">+200%</div><div style="font:400 10px/1.3 'DM Sans',sans-serif;color:rgba(20,20,20,.6);margin-top:4px">de volumen con agua</div></div>
+          <div style="background:#F4F1EE;border-radius:8px;padding:11px"><div style="font:700 19px/1 'Mountains of Christmas',cursive">100%</div><div style="font:400 10px/1.3 'DM Sans',sans-serif;color:rgba(20,20,20,.6);margin-top:4px">consignación, sin riesgo</div></div>
+        </div>
+      </div>
+      <div style="padding:0 16px 18px;display:flex;flex-direction:column;gap:10px">
+        <div style="font:700 21px/1 'Mountains of Christmas',cursive">Nuestros productos</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+          <div style="border:2px solid #0E0E0E;border-radius:8px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/IMG_9885-thumb.jpg" alt="Botella de vidrio con corcho" style="display:block;width:100%;height:62px;object-fit:cover"><div style="padding:7px 8px;font:700 10.5px/1.2 'DM Sans',sans-serif">Botella</div></div>
+          <div style="border:2px solid #0E0E0E;border-radius:8px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/IMG_9863-thumb.jpg" alt="Bolsa de 100 gr" style="display:block;width:100%;height:62px;object-fit:cover"><div style="padding:7px 8px;font:700 10.5px/1.2 'DM Sans',sans-serif">Bolsa</div></div>
+          <div style="border:2px solid #0E0E0E;border-radius:8px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/Plantilla-thumb.png" alt="Kit Huellas de Santa con plantilla" style="display:block;width:100%;height:62px;object-fit:cover;object-position:top;background:#fff"><div style="padding:7px 8px;font:700 10.5px/1.2 'DM Sans',sans-serif">Kit Huellas</div></div>
+        </div>
+      </div>
+      <div style="padding:16px;background:#C4211E;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <div style="font:700 17px/1 'Mountains of Christmas',cursive">¿Lo quiere en su tienda?</div>
+        <div style="padding:10px 12px;border-radius:5px;background:#fff;color:#C4211E;font:700 11px/1 'DM Sans',sans-serif;white-space:nowrap">7180-5080</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 22px 22px"><div style="border-top:1px solid rgba(20,20,20,.12);padding-top:14px;font:400 11px/1.65 'DM Sans',sans-serif;color:rgba(20,20,20,.62)"><b style="font-weight:700;color:#141414">Regla clave:</b> el marco negro de 2px es la firma del sistema — botones, tarjetas y fotos lo llevan, igual que la etiqueta.<br><b style="font-weight:700;color:#141414">Movimiento:</b> copos cayendo solo en el hero; botones 150ms.<br><b style="font-weight:700;color:#141414">Tono:</b> festivo pero vendedor. Frases del empaque literales (“Solo agrega agua y… ¡magia!”).<br><b style="font-weight:700;color:#141414">Íconos:</b> ninguno nuevo — se reusa el muñeco de nieve y el sello reutilizable del empaque.</div></div>
+</div></div>
+
+<div class="dv-opt" id="2b"><div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Vitrina — blanco de nieve, el rojo como acento, foto al mando</div>
+<div class="dv-card" style="width:452px;background:#F7F8FA;font-family:'DM Sans',system-ui,sans-serif;color:#1A1D22">
+  <div style="padding:22px 24px;border-bottom:1px solid rgba(26,29,34,.1);display:flex;align-items:baseline;justify-content:space-between">
+    <div style="font:700 26px/1 'Mountains of Christmas',cursive;color:#C4211E">Nieve Instantánea</div>
+    <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:rgba(26,29,34,.45)">2B · VITRINA</div>
+  </div>
+
+  <div style="padding:20px 24px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,29,34,.42)">Color</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:10px;background:#F7F8FA;border:1px solid rgba(26,29,34,.14)"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#F7F8FA<br><span style="font-weight:400;color:rgba(26,29,34,.5)">nieve / fondo</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:10px;background:#fff;border:1px solid rgba(26,29,34,.14)"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#FFFFFF<br><span style="font-weight:400;color:rgba(26,29,34,.5)">tarjeta</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:10px;background:#C4211E"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#C4211E<br><span style="font-weight:400;color:rgba(26,29,34,.5)">rojo · solo acento</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:10px;background:#1A1D22"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#1A1D22<br><span style="font-weight:400;color:rgba(26,29,34,.5)">tinta</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:10px;background:#C9D4DE"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#C9D4DE<br><span style="font-weight:400;color:rgba(26,29,34,.5)">hielo / bordes</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;border-radius:10px;background:#B9A6D9"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#B9A6D9<br><span style="font-weight:400;color:rgba(26,29,34,.5)">lila de las fotos</span></div></div>
+    </div>
+    <div style="font:400 10.5px/1.5 'DM Sans',sans-serif;color:rgba(26,29,34,.55)">El lila sale de las luces bokeh de sus propias fotos — sirve para fondos de sección sin pelearse con el rojo.</div>
+  </div>
+
+  <div style="padding:0 24px 18px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,29,34,.42)">Tipografía</div>
+    <div style="font:500 34px/1.08 'DM Sans',sans-serif;letter-spacing:-.03em">Decoración navideña<br>que aguanta la<br>temporada completa</div>
+    <div style="font:500 9.5px/1 'JetBrains Mono',monospace;color:rgba(26,29,34,.45)">DM Sans 500 · títulos · tracking -3% &nbsp;·&nbsp; Mountains of Christmas solo en el wordmark y en “momentos de magia”</div>
+    <div style="font:400 13.5px/1.65 'DM Sans',sans-serif;max-width:42ch;color:rgba(26,29,34,.78)">Pyme costarricense desde 2018. Registro sanitario, factura electrónica, código de barras único y consignación al 100 %.</div>
+  </div>
+
+  <div style="padding:0 24px 18px;display:flex;flex-direction:column;gap:11px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,29,34,.42)">Componentes</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <div style="display:flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;background:#C4211E;color:#fff;font:500 13px/1 'DM Sans',sans-serif;box-shadow:0 6px 16px rgba(196,33,30,.28)"><span style="width:7px;height:7px;border-radius:50%;background:#8FF0A8;display:block"></span>Cotizar por WhatsApp</div>
+      <div style="padding:13px 18px;border-radius:999px;background:#fff;border:1px solid rgba(26,29,34,.16);color:#1A1D22;font:500 13px/1 'DM Sans',sans-serif">Descargar catálogo</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      <span style="padding:6px 12px;border-radius:999px;background:#fff;border:1px solid rgba(26,29,34,.14);font:500 10.5px/1 'DM Sans',sans-serif">Inodoro</span>
+      <span style="padding:6px 12px;border-radius:999px;background:#fff;border:1px solid rgba(26,29,34,.14);font:500 10.5px/1 'DM Sans',sans-serif">Hipoalergénico</span>
+      <span style="padding:6px 12px;border-radius:999px;background:#fff;border:1px solid rgba(26,29,34,.14);font:500 10.5px/1 'DM Sans',sans-serif">Reutilizable</span>
+      <span style="padding:6px 12px;border-radius:999px;background:#1A1D22;color:#fff;font:500 10.5px/1 'DM Sans',sans-serif">Consignación 100 %</span>
+    </div>
+    <div style="display:flex;gap:10px">
+      <div style="flex:1;background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(26,29,34,.07);overflow:hidden">
+        <img loading="lazy" decoding="async" src="assets/IMG_9885-2-web.jpg" alt="Botella de vidrio con corcho de nieve instantánea" style="display:block;width:100%;height:96px;object-fit:cover">
+        <div style="padding:11px 12px 13px;display:flex;flex-direction:column;gap:4px">
+          <div style="font:500 14px/1.2 'DM Sans',sans-serif;letter-spacing:-.02em">Botella 100 gr</div>
+          <div style="font:400 11px/1.45 'DM Sans',sans-serif;color:rgba(26,29,34,.58)">Rinde 1.5 L de nieve</div>
+          <div style="font:500 11px/1 'DM Sans',sans-serif;color:#C4211E;margin-top:2px">Precio mayoreo →</div>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+        <div style="background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(26,29,34,.07);padding:11px 12px;display:flex;flex-direction:column;gap:6px">
+          <div style="font:500 9px/1 'DM Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:rgba(26,29,34,.45)">WhatsApp</div>
+          <div style="font:400 12px/1 'DM Sans',sans-serif;color:rgba(26,29,34,.35);border-bottom:1px solid rgba(26,29,34,.15);padding-bottom:6px">+506 7180-5080</div>
+        </div>
+        <div style="background:rgba(185,166,217,.22);border-radius:12px;padding:11px 12px;display:flex;flex-direction:column;gap:6px">
+          <div style="font:400 12px/1.5 'DM Sans',sans-serif">“La aceptación del público creció año con año.”</div>
+          <div style="font:500 8.5px/1 'JetBrains Mono',monospace;color:rgba(26,29,34,.55)">DESDE 2018 · COSTA RICA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 24px 22px;display:flex;flex-direction:column;gap:10px">
+    <div style="font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,29,34,.42)">Landing · 360px</div>
+    <div style="width:360px;max-width:100%;border:1px solid rgba(26,29,34,.14);border-radius:20px;overflow:hidden;background:#F7F8FA">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:rgba(247,248,250,.9)">
+        <div style="font:700 18px/1 'Mountains of Christmas',cursive;color:#C4211E">Nieve Instantánea</div>
+        <div style="width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid rgba(26,29,34,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><span style="width:14px;height:1.5px;background:#1A1D22;display:block"></span><span style="width:14px;height:1.5px;background:#1A1D22;display:block"></span></div>
+      </div>
+      <div style="padding:6px 16px 20px;display:flex;flex-direction:column;gap:14px">
+        <div style="font:500 31px/1.06 'DM Sans',sans-serif;letter-spacing:-.03em">Nieve artificial<br>para su temporada<br><span style="color:#C4211E">más importante</span></div>
+        <div style="font:400 13.5px/1.6 'DM Sans',sans-serif;color:rgba(26,29,34,.7)">Aumenta 200 % su volumen con agua. Inodoro, hipoalergénico y reutilizable. Consignación al 100 %.</div>
+        <div style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(26,29,34,.14)">
+          <img loading="lazy" decoding="async" src="assets/IMG_9883-2-web.jpg" alt="Bolsa de nieve instantánea sobre nieve con luces" style="display:block;width:100%;height:200px;object-fit:cover">
+          <span style="position:absolute;left:24%;top:0;width:4px;height:4px;border-radius:50%;background:#fff;animation:ni-fall 6.5s linear infinite"></span>
+          <span style="position:absolute;left:70%;top:0;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.85;animation:ni-fall 8s linear infinite 2.4s"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:16px;border-radius:999px;background:#C4211E;color:#fff;font:500 14px/1 'DM Sans',sans-serif;box-shadow:0 8px 20px rgba(196,33,30,.3)"><span style="width:7px;height:7px;border-radius:50%;background:#8FF0A8;display:block"></span>Cotizar por WhatsApp</div>
+          <div style="text-align:center;padding:16px;border-radius:999px;background:#fff;border:1px solid rgba(26,29,34,.16);font:500 14px/1 'DM Sans',sans-serif">Ver los tres productos</div>
+        </div>
+      </div>
+      <div style="padding:20px 16px;background:#fff;display:flex;flex-direction:column;gap:12px">
+        <div style="font:500 20px/1.15 'DM Sans',sans-serif;letter-spacing:-.02em">Por qué revenderlo</div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;gap:11px;align-items:flex-start;padding-bottom:9px;border-bottom:1px solid rgba(26,29,34,.08)"><span style="font:500 10px/1 'JetBrains Mono',monospace;color:#C4211E;padding-top:3px">01</span><div><div style="font:500 12.5px/1.3 'DM Sans',sans-serif">Consignación al 100 %</div><div style="font:400 11.5px/1.45 'DM Sans',sans-serif;color:rgba(26,29,34,.6);margin-top:3px">Le devolvemos todo lo que no se venda.</div></div></div>
+          <div style="display:flex;gap:11px;align-items:flex-start;padding-bottom:9px;border-bottom:1px solid rgba(26,29,34,.08)"><span style="font:500 10px/1 'JetBrains Mono',monospace;color:#C4211E;padding-top:3px">02</span><div><div style="font:500 12.5px/1.3 'DM Sans',sans-serif">Listo para tienda</div><div style="font:400 11.5px/1.45 'DM Sans',sans-serif;color:rgba(26,29,34,.6);margin-top:3px">Código de barras único, factura electrónica y registro sanitario.</div></div></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="font:500 10px/1 'JetBrains Mono',monospace;color:#C4211E;padding-top:3px">03</span><div><div style="font:500 12.5px/1.3 'DM Sans',sans-serif">Tres presentaciones</div><div style="font:400 11.5px/1.45 'DM Sans',sans-serif;color:rgba(26,29,34,.6);margin-top:3px">Botella, bolsa y Kit Huellas de Santa para distintos precios.</div></div></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:4px">
+          <img loading="lazy" decoding="async" src="assets/IMG_9863-thumb.jpg" alt="Bolsa de 100 gr" style="flex:1;min-width:0;height:78px;object-fit:cover;border-radius:10px">
+          <img loading="lazy" decoding="async" src="assets/IMG_9885-thumb.jpg" alt="Botella de vidrio con corcho" style="flex:1;min-width:0;height:78px;object-fit:cover;border-radius:10px">
+          <img loading="lazy" decoding="async" src="assets/Plantilla-thumb.png" alt="Kit Huellas de Santa" style="flex:1;min-width:0;height:78px;object-fit:cover;object-position:top;border-radius:10px;background:#fff">
+        </div>
+      </div>
+      <div style="padding:18px 16px;background:rgba(185,166,217,.2);display:flex;flex-direction:column;gap:10px">
+        <div style="font:700 22px/1 'Mountains of Christmas',cursive;color:#C4211E">Solo agrega agua y… ¡magia!</div>
+        <div style="font:400 12.5px/1.55 'DM Sans',sans-serif;color:rgba(26,29,34,.7)">Le hacemos una demostración en su local, sin costo.</div>
+        <div style="align-self:flex-start;padding:12px 16px;border-radius:999px;background:#1A1D22;color:#fff;font:500 12.5px/1 'DM Sans',sans-serif">Agendar demostración</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 24px 22px"><div style="border-top:1px solid rgba(26,29,34,.1);padding-top:14px;font:400 11px/1.65 'DM Sans',sans-serif;color:rgba(26,29,34,.62)"><b style="font-weight:700;color:#1A1D22">Regla clave:</b> la foto es el color. El rojo solo aparece en CTA, wordmark y una palabra por título.<br><b style="font-weight:700;color:#1A1D22">Movimiento:</b> fade-up de 12px al entrar cada sección, 250ms; copos solo sobre la foto principal.<br><b style="font-weight:700;color:#1A1D22">Tono:</b> proveedor confiable, usted. La magia se guarda para la sección final.<br><b style="font-weight:700;color:#1A1D22">Ojo:</b> con blanco sobre blanco las fotos necesitan recorte parejo — vale la pena una tanda nueva con fondo consistente.</div></div>
+</div></div>
+
+</div>
+<p class="dv-next">Prueba: “vamos con <a class="dv-oid" href="#2b">2b</a> pero con el marco negro de <a class="dv-oid" href="#2a">2a</a>” · “armemos la landing completa de <a class="dv-oid" href="#2a">2a</a> en móvil y desktop” · “el mercado es Costa Rica, corrige la copia”</p>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Tres direcciones de sistema — Nieve Instantánea</span></div>
+<p class="dv-intro">Contexto: catálogo estacional (nov–ene) de nieve artificial — insta-snow que crece con agua, y nieve de glitter/plástico. Compradores B2B: revendedores, plazas y municipios, productores de eventos. Conversión = WhatsApp. Mobile-first, sin CMS: cada dirección está pensada como HTML estático con tokens en CSS variables, editable a mano. Cada tarjeta muestra tokens, componentes y el hero en 360px.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Navidad Clásica — cálida, de confianza, catálogo</div>
+<div class="dv-card" style="width:452px;background:#FBF8F3;font-family:'Instrument Sans',system-ui,sans-serif;color:#14261C">
+  <div style="padding:22px 24px;border-bottom:1px solid rgba(20,38,28,.1);display:flex;flex-direction:column;gap:6px">
+    <div style="font:400 30px/1 'Instrument Serif',Georgia,serif;letter-spacing:-.01em">Nieve Instantánea</div>
+    <div style="font:500 10px/1 'Instrument Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1E4636">Sistema 1a · Navidad Clásica</div>
+  </div>
+
+  <div style="padding:20px 24px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:600 10px/1 'Instrument Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,38,28,.45)">Color</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:6px;background:#1E4636"></div><div style="font:600 9.5px/1.3 'JetBrains Mono',monospace">#1E4636<br><span style="font-weight:400;color:rgba(20,38,28,.5)">pino / primario</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:6px;background:#B4342C"></div><div style="font:600 9.5px/1.3 'JetBrains Mono',monospace">#B4342C<br><span style="font-weight:400;color:rgba(20,38,28,.5)">acento / CTA</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:6px;background:#C79A3E"></div><div style="font:600 9.5px/1.3 'JetBrains Mono',monospace">#C79A3E<br><span style="font-weight:400;color:rgba(20,38,28,.5)">oro / detalle</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:6px;background:#FBF8F3;border:1px solid rgba(20,38,28,.14)"></div><div style="font:600 9.5px/1.3 'JetBrains Mono',monospace">#FBF8F3<br><span style="font-weight:400;color:rgba(20,38,28,.5)">fondo</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:6px;background:#FFFFFF;border:1px solid rgba(20,38,28,.14)"></div><div style="font:600 9.5px/1.3 'JetBrains Mono',monospace">#FFFFFF<br><span style="font-weight:400;color:rgba(20,38,28,.5)">superficie</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:6px;background:#14261C"></div><div style="font:600 9.5px/1.3 'JetBrains Mono',monospace">#14261C<br><span style="font-weight:400;color:rgba(20,38,28,.5)">tinta</span></div></div>
+    </div>
+  </div>
+
+  <div style="padding:4px 24px 20px;display:flex;flex-direction:column;gap:10px">
+    <div style="font:600 10px/1 'Instrument Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,38,28,.45)">Tipografía</div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="font:400 40px/1.02 'Instrument Serif',Georgia,serif;letter-spacing:-.015em">Nieve que crece<br><span style="font-style:italic;color:#1E4636">en 3 segundos</span></div>
+      <div style="font:500 9.5px/1 'JetBrains Mono',monospace;color:rgba(20,38,28,.4);margin-top:6px">Instrument Serif · display · 40/56/72</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:3px">
+      <div style="font:400 14px/1.6 'Instrument Sans',sans-serif;max-width:38ch">Polímero no tóxico que se expande hasta 40 veces su volumen. Para escaparates, plazas y producciones que necesitan nieve real sin frío.</div>
+      <div style="font:500 9.5px/1 'JetBrains Mono',monospace;color:rgba(20,38,28,.4)">Instrument Sans · texto · 14/16/18 · line-height 1.6</div>
+    </div>
+  </div>
+
+  <div style="padding:4px 24px 20px;display:flex;flex-direction:column;gap:11px">
+    <div style="font:600 10px/1 'Instrument Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,38,28,.45)">Componentes</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <div style="display:flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;background:#B4342C;color:#fff;font:600 13px/1 'Instrument Sans',sans-serif;box-shadow:0 2px 0 rgba(0,0,0,.18)"><span style="width:7px;height:7px;border-radius:50%;background:#8ff0a8;display:block"></span>Cotizar por WhatsApp</div>
+      <div style="padding:13px 18px;border-radius:999px;border:1.5px solid #1E4636;color:#1E4636;font:600 13px/1 'Instrument Sans',sans-serif">Ver catálogo</div>
+      <div style="font:600 13px/1 'Instrument Sans',sans-serif;color:#1E4636;text-decoration:underline;text-underline-offset:4px">Precios por mayoreo →</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      <span style="padding:6px 11px;border-radius:5px;background:rgba(30,70,54,.09);color:#1E4636;font:600 10.5px/1 'Instrument Sans',sans-serif;letter-spacing:.04em">NO TÓXICO</span>
+      <span style="padding:6px 11px;border-radius:5px;background:rgba(199,154,62,.16);color:#7A5B12;font:600 10.5px/1 'Instrument Sans',sans-serif;letter-spacing:.04em">MAYOREO</span>
+      <span style="padding:6px 11px;border-radius:5px;background:rgba(180,52,44,.1);color:#B4342C;font:600 10.5px/1 'Instrument Sans',sans-serif;letter-spacing:.04em">TEMPORADA 2026</span>
+    </div>
+    <div style="display:flex;gap:10px">
+      <div style="flex:1;background:#fff;border:1px solid rgba(20,38,28,.12);border-radius:10px;overflow:hidden">
+        <div style="height:82px;background:repeating-linear-gradient(135deg,#EFEAE1 0 6px,#F8F5EF 6px 12px);display:flex;align-items:center;justify-content:center;font:500 8.5px/1 'JetBrains Mono',monospace;color:rgba(20,38,28,.45)">foto producto</div>
+        <div style="padding:11px 12px 13px;display:flex;flex-direction:column;gap:5px">
+          <div style="font:400 17px/1.15 'Instrument Serif',Georgia,serif">Insta-Snow 1 kg</div>
+          <div style="font:400 11px/1.45 'Instrument Sans',sans-serif;color:rgba(20,38,28,.6)">Rinde hasta 100 L de nieve</div>
+          <div style="font:600 12px/1 'Instrument Sans',sans-serif;color:#B4342C;margin-top:2px">Desde $XXX MXN</div>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+        <div style="background:#fff;border:1px solid rgba(20,38,28,.12);border-radius:10px;padding:11px 12px;display:flex;flex-direction:column;gap:5px">
+          <div style="font:500 9.5px/1 'Instrument Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:rgba(20,38,28,.45)">Nombre</div>
+          <div style="height:1px;background:rgba(20,38,28,.12)"></div>
+          <div style="font:400 12px/1 'Instrument Sans',sans-serif;color:rgba(20,38,28,.35)">Tu nombre o empresa</div>
+        </div>
+        <div style="background:rgba(30,70,54,.06);border-left:3px solid #C79A3E;border-radius:0 8px 8px 0;padding:11px 12px;display:flex;flex-direction:column;gap:6px">
+          <div style="font:400 12px/1.5 'Instrument Serif',Georgia,serif;font-style:italic">“Cubrimos 400 m² de plaza en una tarde.”</div>
+          <div style="font:500 9.5px/1 'JetBrains Mono',monospace;color:rgba(20,38,28,.5)">Plaza · Monterrey</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:4px 24px 24px;display:flex;flex-direction:column;gap:10px">
+    <div style="font:600 10px/1 'Instrument Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(20,38,28,.45)">Landing · 360px</div>
+    <div style="width:360px;max-width:100%;border:1px solid rgba(20,38,28,.14);border-radius:16px;overflow:hidden;background:#FBF8F3;position:relative">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#FBF8F3;border-bottom:1px solid rgba(20,38,28,.08)">
+        <div style="font:400 18px/1 'Instrument Serif',Georgia,serif">Nieve Instantánea</div>
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="width:20px;height:1.5px;background:#14261C;display:block"></span><span style="width:20px;height:1.5px;background:#14261C;display:block"></span></div>
+      </div>
+      <div style="padding:26px 20px 22px;display:flex;flex-direction:column;gap:14px;background:#1E4636;color:#FBF8F3;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 80% 10%,rgba(255,255,255,.16),transparent 55%)"></div>
+        <span style="position:absolute;left:18%;top:0;width:4px;height:4px;border-radius:50%;background:#fff;opacity:.8;animation:ni-fall 5.5s linear infinite"></span>
+        <span style="position:absolute;left:56%;top:0;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.7;animation:ni-fall 7s linear infinite 1.4s"></span>
+        <span style="position:absolute;left:82%;top:0;width:5px;height:5px;border-radius:50%;background:#fff;opacity:.6;animation:ni-fall 6.2s linear infinite 2.8s"></span>
+        <div style="position:relative;font:500 9.5px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#C79A3E">TEMPORADA NOV–ENE · ENVÍOS A TODO MÉXICO</div>
+        <div style="position:relative;font:400 34px/1.05 'Instrument Serif',Georgia,serif;letter-spacing:-.015em">Nieve artificial que se ve real</div>
+        <div style="position:relative;font:400 13.5px/1.6 'Instrument Sans',sans-serif;color:rgba(251,248,243,.82);max-width:30ch">Insta-snow que crece con agua y nieve decorativa para escaparates, plazas y producción de eventos.</div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:9px;margin-top:2px">
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;border-radius:999px;background:#B4342C;color:#fff;font:600 14px/1 'Instrument Sans',sans-serif"><span style="width:7px;height:7px;border-radius:50%;background:#8ff0a8;display:block"></span>Cotizar por WhatsApp</div>
+          <div style="display:flex;align-items:center;justify-content:center;padding:15px;border-radius:999px;border:1.5px solid rgba(251,248,243,.4);color:#FBF8F3;font:600 14px/1 'Instrument Sans',sans-serif">Ver productos</div>
+        </div>
+      </div>
+      <div style="padding:20px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:400 21px/1.15 'Instrument Serif',Georgia,serif">Dos tipos de nieve</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:11px;align-items:center;background:#fff;border:1px solid rgba(20,38,28,.1);border-radius:12px;padding:11px">
+            <div style="width:56px;height:56px;flex:none;border-radius:9px;background:repeating-linear-gradient(135deg,#EFEAE1 0 6px,#F8F5EF 6px 12px)"></div>
+            <div style="display:flex;flex-direction:column;gap:3px"><div style="font:600 13px/1.2 'Instrument Sans',sans-serif">Insta-Snow</div><div style="font:400 11.5px/1.4 'Instrument Sans',sans-serif;color:rgba(20,38,28,.6)">Polvo + agua = nieve esponjosa</div></div>
+          </div>
+          <div style="display:flex;gap:11px;align-items:center;background:#fff;border:1px solid rgba(20,38,28,.1);border-radius:12px;padding:11px">
+            <div style="width:56px;height:56px;flex:none;border-radius:9px;background:repeating-linear-gradient(135deg,#EFEAE1 0 6px,#F8F5EF 6px 12px)"></div>
+            <div style="display:flex;flex-direction:column;gap:3px"><div style="font:600 13px/1.2 'Instrument Sans',sans-serif">Nieve decorativa</div><div style="font:400 11.5px/1.4 'Instrument Sans',sans-serif;color:rgba(20,38,28,.6)">Glitter y plástico para escaparate</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 24px 24px"><div style="border-top:1px solid rgba(20,38,28,.1);padding-top:14px;font:400 11px/1.65 'Instrument Sans',sans-serif;color:rgba(20,38,28,.6)"><b style="font-weight:600;color:#14261C">Movimiento:</b> copos que caen solo en el hero, 200ms ease-out en botones, nada más.<br><b style="font-weight:600;color:#14261C">Tono:</b> cálido y directo, tú informal. “Te cotizamos hoy mismo.”<br><b style="font-weight:600;color:#14261C">Íconos:</b> línea 1.5px, esquinas redondeadas, un solo set (Lucide).<br><b style="font-weight:600;color:#14261C">Espacio:</b> escala 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64.</div></div>
+</div></div>
+
+<div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Proveedor Técnico — B2B, ficha de especificaciones, sirve todo el año</div>
+<div class="dv-card" style="width:452px;background:#F2F4F6;font-family:'Archivo',system-ui,sans-serif;color:#0E1417">
+  <div style="padding:20px 24px;border-bottom:1px solid rgba(14,20,23,.12);display:flex;align-items:baseline;justify-content:space-between">
+    <div style="font:800 19px/1 'Archivo',sans-serif;letter-spacing:-.02em;text-transform:uppercase">Nieve Instantánea</div>
+    <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:#3F8FA8">SISTEMA 1b</div>
+  </div>
+
+  <div style="padding:20px 24px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:rgba(14,20,23,.45)">01 · COLOR</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid rgba(14,20,23,.12)">
+      <div style="height:52px;background:#16323C"></div><div style="height:52px;background:#3F8FA8"></div><div style="height:52px;background:#9FC6D4"></div><div style="height:52px;background:#E4572E"></div><div style="height:52px;background:#F2F4F6"></div><div style="height:52px;background:#FFFFFF"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font:500 9px/1.4 'JetBrains Mono',monospace;color:rgba(14,20,23,.6)">
+      <div>#16323C · tinta/primario</div><div>#3F8FA8 · hielo/acento</div><div>#9FC6D4 · hielo 40</div><div>#E4572E · señal/CTA</div><div>#F2F4F6 · fondo</div><div>#FFFFFF · ficha</div>
+    </div>
+  </div>
+
+  <div style="padding:4px 24px 20px;display:flex;flex-direction:column;gap:10px">
+    <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:rgba(14,20,23,.45)">02 · TIPOGRAFÍA</div>
+    <div style="font:800 34px/1 'Archivo',sans-serif;letter-spacing:-.03em;text-transform:uppercase">40× su<br>volumen</div>
+    <div style="font:500 9px/1 'JetBrains Mono',monospace;color:rgba(14,20,23,.45)">Archivo 800 · títulos · uppercase · tracking -3%</div>
+    <div style="font:400 13.5px/1.65 'Archivo',sans-serif;max-width:40ch">Polímero superabsorbente de grado decorativo. Presentaciones de 100 g a 25 kg. Ficha técnica y hoja de seguridad disponibles para licitación.</div>
+    <div style="font:500 9px/1 'JetBrains Mono',monospace;color:rgba(14,20,23,.45)">Archivo 400 · texto · 13.5/15/17 &nbsp;·&nbsp; JetBrains Mono · datos y etiquetas</div>
+  </div>
+
+  <div style="padding:4px 24px 20px;display:flex;flex-direction:column;gap:11px">
+    <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:rgba(14,20,23,.45)">03 · COMPONENTES</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <div style="padding:13px 18px;background:#E4572E;color:#fff;font:700 12px/1 'Archivo',sans-serif;letter-spacing:.06em;text-transform:uppercase">Pedir cotización</div>
+      <div style="padding:13px 18px;background:transparent;border:1.5px solid #16323C;color:#16323C;font:700 12px/1 'Archivo',sans-serif;letter-spacing:.06em;text-transform:uppercase">Ficha técnica</div>
+      <div style="font:500 11px/1 'JetBrains Mono',monospace;color:#3F8FA8;border-bottom:1px solid #3F8FA8;padding-bottom:2px">lista_de_precios.pdf</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:0;border:1px solid rgba(14,20,23,.14)">
+      <span style="padding:6px 10px;font:500 9.5px/1 'JetBrains Mono',monospace;border-right:1px solid rgba(14,20,23,.14);color:#16323C">SKU IS-1000</span>
+      <span style="padding:6px 10px;font:500 9.5px/1 'JetBrains Mono',monospace;border-right:1px solid rgba(14,20,23,.14);color:#16323C">MOQ 12 PZ</span>
+      <span style="padding:6px 10px;font:500 9.5px/1 'JetBrains Mono',monospace;border-right:1px solid rgba(14,20,23,.14);background:#3F8FA8;color:#fff">EN STOCK</span>
+      <span style="padding:6px 10px;font:500 9.5px/1 'JetBrains Mono',monospace;color:#16323C">CDMX 24 H</span>
+    </div>
+    <div style="display:flex;gap:10px">
+      <div style="flex:1;background:#fff;border:1px solid rgba(14,20,23,.14)">
+        <div style="height:80px;background:repeating-linear-gradient(90deg,#E8EDF0 0 5px,#F5F8FA 5px 10px);display:flex;align-items:center;justify-content:center;font:500 8.5px/1 'JetBrains Mono',monospace;color:rgba(14,20,23,.45)">packshot 1:1</div>
+        <div style="padding:10px 11px;display:flex;flex-direction:column;gap:6px">
+          <div style="font:700 12.5px/1.15 'Archivo',sans-serif;text-transform:uppercase;letter-spacing:-.01em">Insta-Snow 1 kg</div>
+          <div style="display:flex;flex-direction:column;gap:2px;font:400 9.5px/1.5 'JetBrains Mono',monospace;color:rgba(14,20,23,.62)"><div style="display:flex;justify-content:space-between"><span>Rendimiento</span><span style="color:#0E1417">100 L</span></div><div style="display:flex;justify-content:space-between"><span>Expansión</span><span style="color:#0E1417">40×</span></div></div>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+        <div style="background:#fff;border:1px solid rgba(14,20,23,.14);padding:10px 11px;display:flex;flex-direction:column;gap:6px">
+          <div style="font:500 8.5px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:rgba(14,20,23,.5)">VOLUMEN REQUERIDO</div>
+          <div style="font:400 12px/1 'Archivo',sans-serif;color:rgba(14,20,23,.35);border-bottom:1.5px solid #16323C;padding-bottom:5px">ej. 200 kg</div>
+        </div>
+        <div style="background:#16323C;color:#fff;padding:11px;display:flex;flex-direction:column;gap:5px">
+          <div style="font:400 11.5px/1.5 'Archivo',sans-serif">“Nos surtieron 3 plazas en la misma semana.”</div>
+          <div style="font:500 8.5px/1 'JetBrains Mono',monospace;color:#9FC6D4">COMPRAS · GRUPO RETAIL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:4px 24px 24px;display:flex;flex-direction:column;gap:10px">
+    <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:rgba(14,20,23,.45)">04 · LANDING 360px</div>
+    <div style="width:360px;max-width:100%;border:1px solid rgba(14,20,23,.16);overflow:hidden;background:#F2F4F6">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:#16323C;color:#fff">
+        <div style="font:800 14px/1 'Archivo',sans-serif;letter-spacing:-.01em;text-transform:uppercase">Nieve Instantánea</div>
+        <div style="font:500 9px/1 'JetBrains Mono',monospace;border:1px solid rgba(255,255,255,.4);padding:5px 8px">MENÚ</div>
+      </div>
+      <div style="padding:24px 18px;display:flex;flex-direction:column;gap:13px;background:#fff;border-bottom:1px solid rgba(14,20,23,.12)">
+        <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#3F8FA8">MAYOREO · TEMPORADA 2026 ABIERTA</div>
+        <div style="font:800 31px/1.02 'Archivo',sans-serif;letter-spacing:-.03em;text-transform:uppercase">Nieve artificial<br>por kilo o por<br><span style="color:#3F8FA8">tonelada</span></div>
+        <div style="font:400 13px/1.6 'Archivo',sans-serif;color:rgba(14,20,23,.68)">Insta-snow y nieve decorativa para plazas, escaparates y producción. Cotización el mismo día.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(14,20,23,.14);margin-top:2px">
+          <div style="padding:11px 12px;border-right:1px solid rgba(14,20,23,.14)"><div style="font:800 20px/1 'Archivo',sans-serif">40×</div><div style="font:500 8.5px/1.3 'JetBrains Mono',monospace;color:rgba(14,20,23,.5);margin-top:4px">EXPANSIÓN</div></div>
+          <div style="padding:11px 12px"><div style="font:800 20px/1 'Archivo',sans-serif">24 h</div><div style="font:500 8.5px/1.3 'JetBrains Mono',monospace;color:rgba(14,20,23,.5);margin-top:4px">ENTREGA CDMX</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+          <div style="text-align:center;padding:15px;background:#E4572E;color:#fff;font:700 13px/1 'Archivo',sans-serif;letter-spacing:.06em;text-transform:uppercase">Cotizar por WhatsApp</div>
+          <div style="text-align:center;padding:15px;border:1.5px solid #16323C;color:#16323C;font:700 13px/1 'Archivo',sans-serif;letter-spacing:.06em;text-transform:uppercase">Lista de precios</div>
+        </div>
+      </div>
+      <div style="padding:18px;display:flex;flex-direction:column;gap:10px">
+        <div style="font:500 9px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:rgba(14,20,23,.45)">CATÁLOGO</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+          <div style="background:#fff;border:1px solid rgba(14,20,23,.14)"><div style="height:64px;background:repeating-linear-gradient(90deg,#E8EDF0 0 5px,#F5F8FA 5px 10px)"></div><div style="padding:9px 10px;font:700 11px/1.2 'Archivo',sans-serif;text-transform:uppercase">Insta-Snow<div style="font:400 9px/1.3 'JetBrains Mono',monospace;color:rgba(14,20,23,.55);margin-top:4px">100 g – 25 kg</div></div></div>
+          <div style="background:#fff;border:1px solid rgba(14,20,23,.14)"><div style="height:64px;background:repeating-linear-gradient(90deg,#E8EDF0 0 5px,#F5F8FA 5px 10px)"></div><div style="padding:9px 10px;font:700 11px/1.2 'Archivo',sans-serif;text-transform:uppercase">Nieve glitter<div style="font:400 9px/1.3 'JetBrains Mono',monospace;color:rgba(14,20,23,.55);margin-top:4px">bolsa 500 g</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 24px 24px"><div style="border-top:1px solid rgba(14,20,23,.12);padding-top:14px;font:400 11px/1.65 'Archivo',sans-serif;color:rgba(14,20,23,.62)"><b style="font-weight:700;color:#0E1417">Movimiento:</b> cero decoración; solo estados de foco visibles y 120ms lineales.<br><b style="font-weight:700;color:#0E1417">Tono:</b> proveedor serio, usted implícito. Datos antes que adjetivos.<br><b style="font-weight:700;color:#0E1417">Íconos:</b> casi ninguno — se usan tablas y etiquetas mono en su lugar.<br><b style="font-weight:700;color:#0E1417">Espacio:</b> retícula de 8, esquinas 0px, bordes de 1px en todo.</div></div>
+</div></div>
+
+<div class="dv-opt" id="1c"><div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Noche de Nieve — editorial oscuro, alto contraste, muy memorable</div>
+<div class="dv-card" style="width:452px;background:#0B1020;font-family:'Karla',system-ui,sans-serif;color:#F4F7FF;border-color:rgba(255,255,255,.14)">
+  <div style="padding:22px 24px;border-bottom:1px solid rgba(244,247,255,.14);display:flex;align-items:baseline;justify-content:space-between">
+    <div style="font:400 22px/1 'Anton',sans-serif;letter-spacing:.02em;text-transform:uppercase">Nieve Instantánea</div>
+    <div style="font:700 9px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#E8C87A">1c</div>
+  </div>
+
+  <div style="padding:20px 24px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 9.5px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:rgba(244,247,255,.5)">COLOR</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:8px;background:#0B1020;border:1px solid rgba(244,247,255,.2)"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#0B1020<br><span style="font-weight:400;color:rgba(244,247,255,.5)">noche / fondo</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:8px;background:#141B33"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#141B33<br><span style="font-weight:400;color:rgba(244,247,255,.5)">superficie</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:8px;background:#7FB2FF"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#7FB2FF<br><span style="font-weight:400;color:rgba(244,247,255,.5)">hielo / acento</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:8px;background:#E8C87A"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#E8C87A<br><span style="font-weight:400;color:rgba(244,247,255,.5)">luz cálida</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:8px;background:#F4F7FF"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#F4F7FF<br><span style="font-weight:400;color:rgba(244,247,255,.5)">nieve / tinta</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><div style="height:46px;border-radius:8px;background:#FF5470"></div><div style="font:700 9.5px/1.3 'JetBrains Mono',monospace">#FF5470<br><span style="font-weight:400;color:rgba(244,247,255,.5)">CTA</span></div></div>
+    </div>
+  </div>
+
+  <div style="padding:4px 24px 20px;display:flex;flex-direction:column;gap:10px">
+    <div style="font:700 9.5px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:rgba(244,247,255,.5)">TIPOGRAFÍA</div>
+    <div style="font:400 46px/.92 'Anton',sans-serif;text-transform:uppercase;letter-spacing:.005em">Hace<br><span style="color:#7FB2FF">invierno</span><br>donde sea</div>
+    <div style="font:700 9.5px/1 'JetBrains Mono',monospace;color:rgba(244,247,255,.45)">Anton · display · 46/72/104 · line-height .92</div>
+    <div style="font:400 14px/1.65 'Karla',sans-serif;color:rgba(244,247,255,.78);max-width:38ch">Un puño de polvo, un chorro de agua, y el piso queda cubierto. La nieve que usan las plazas, los escaparates y el cine.</div>
+    <div style="font:700 9.5px/1 'JetBrains Mono',monospace;color:rgba(244,247,255,.45)">Karla · texto · 14/16/18</div>
+  </div>
+
+  <div style="padding:4px 24px 20px;display:flex;flex-direction:column;gap:11px">
+    <div style="font:700 9.5px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:rgba(244,247,255,.5)">COMPONENTES</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <div style="padding:14px 20px;border-radius:4px;background:#FF5470;color:#0B1020;font:700 12.5px/1 'Karla',sans-serif;letter-spacing:.03em">Quiero cotizar</div>
+      <div style="padding:14px 20px;border-radius:4px;background:rgba(127,178,255,.14);border:1px solid #7FB2FF;color:#7FB2FF;font:700 12.5px/1 'Karla',sans-serif">Ver la nieve en acción</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      <span style="padding:6px 11px;border-radius:999px;border:1px solid rgba(244,247,255,.3);font:700 10px/1 'JetBrains Mono',monospace;letter-spacing:.08em">NO TÓXICA</span>
+      <span style="padding:6px 11px;border-radius:999px;background:#E8C87A;color:#0B1020;font:700 10px/1 'JetBrains Mono',monospace;letter-spacing:.08em">MAYOREO</span>
+      <span style="padding:6px 11px;border-radius:999px;background:rgba(127,178,255,.2);color:#7FB2FF;font:700 10px/1 'JetBrains Mono',monospace;letter-spacing:.08em">40× VOLUMEN</span>
+    </div>
+    <div style="display:flex;gap:10px">
+      <div style="flex:1;background:#141B33;border:1px solid rgba(244,247,255,.12);border-radius:12px;overflow:hidden">
+        <div style="height:82px;background:repeating-linear-gradient(135deg,rgba(244,247,255,.07) 0 6px,rgba(244,247,255,.02) 6px 12px);display:flex;align-items:center;justify-content:center;font:700 8.5px/1 'JetBrains Mono',monospace;color:rgba(244,247,255,.4)">video 9:16</div>
+        <div style="padding:11px 12px 13px;display:flex;flex-direction:column;gap:5px">
+          <div style="font:400 15px/1 'Anton',sans-serif;text-transform:uppercase">Insta-Snow 1 kg</div>
+          <div style="font:400 11px/1.45 'Karla',sans-serif;color:rgba(244,247,255,.62)">Rinde 100 L</div>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+        <div style="background:#141B33;border:1px solid rgba(244,247,255,.12);border-radius:10px;padding:11px 12px;display:flex;flex-direction:column;gap:6px">
+          <div style="font:700 8.5px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:rgba(244,247,255,.5)">WHATSAPP</div>
+          <div style="font:400 12px/1 'Karla',sans-serif;color:rgba(244,247,255,.4);border-bottom:1px solid rgba(127,178,255,.5);padding-bottom:5px">+52 ...</div>
+        </div>
+        <div style="border:1px dashed rgba(232,200,122,.5);border-radius:10px;padding:11px 12px;display:flex;flex-direction:column;gap:6px">
+          <div style="font:400 12px/1.5 'Karla',sans-serif">“Los niños creyeron que había nevado.”</div>
+          <div style="font:700 8.5px/1 'JetBrains Mono',monospace;color:#E8C87A">POSADA · PUEBLA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:4px 24px 24px;display:flex;flex-direction:column;gap:10px">
+    <div style="font:700 9.5px/1 'JetBrains Mono',monospace;letter-spacing:.16em;color:rgba(244,247,255,.5)">LANDING 360px</div>
+    <div style="width:360px;max-width:100%;border:1px solid rgba(244,247,255,.16);border-radius:18px;overflow:hidden;background:#0B1020">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px">
+        <div style="font:400 15px/1 'Anton',sans-serif;text-transform:uppercase">Nieve Instantánea</div>
+        <div style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(244,247,255,.3);display:flex;align-items:center;justify-content:center;font:700 9px/1 'JetBrains Mono',monospace">≡</div>
+      </div>
+      <div style="padding:8px 18px 26px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(127,178,255,.28),transparent 60%)"></div>
+        <span style="position:absolute;left:12%;top:0;width:4px;height:4px;border-radius:50%;background:#F4F7FF;animation:ni-fall 6s linear infinite"></span>
+        <span style="position:absolute;left:44%;top:0;width:6px;height:6px;border-radius:50%;background:#F4F7FF;opacity:.7;animation:ni-fall 8s linear infinite 2s"></span>
+        <span style="position:absolute;left:74%;top:0;width:3px;height:3px;border-radius:50%;background:#F4F7FF;opacity:.8;animation:ni-fall 5s linear infinite 3.2s"></span>
+        <div style="position:relative;height:150px;border-radius:14px;background:repeating-linear-gradient(135deg,rgba(244,247,255,.08) 0 7px,rgba(244,247,255,.02) 7px 14px);display:flex;align-items:flex-end;padding:12px;font:700 8.5px/1 'JetBrains Mono',monospace;color:rgba(244,247,255,.45)">video: nieve creciendo en cámara lenta</div>
+        <div style="position:relative;font:400 40px/.94 'Anton',sans-serif;text-transform:uppercase">Nieve de<br>verdad<br><span style="color:#7FB2FF">sin frío</span></div>
+        <div style="position:relative;font:400 13.5px/1.6 'Karla',sans-serif;color:rgba(244,247,255,.75);max-width:30ch">Polvo que crece 40 veces con agua. Y nieve decorativa para escaparates. Envíos a todo México.</div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:9px">
+          <div style="text-align:center;padding:16px;border-radius:6px;background:#FF5470;color:#0B1020;font:700 14px/1 'Karla',sans-serif">Cotizar por WhatsApp</div>
+          <div style="text-align:center;padding:16px;border-radius:6px;border:1px solid rgba(244,247,255,.3);font:700 14px/1 'Karla',sans-serif">Ver productos</div>
+        </div>
+      </div>
+      <div style="padding:20px 18px;background:#141B33;display:flex;flex-direction:column;gap:12px">
+        <div style="font:400 22px/1 'Anton',sans-serif;text-transform:uppercase">Cómo funciona</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:12px;align-items:center"><span style="width:34px;height:34px;flex:none;border-radius:50%;background:rgba(127,178,255,.18);color:#7FB2FF;display:flex;align-items:center;justify-content:center;font:700 12px/1 'JetBrains Mono',monospace;animation:ni-grow 1.2s ease-out">1</span><div style="font:400 12.5px/1.45 'Karla',sans-serif;color:rgba(244,247,255,.8)">Vacías el polvo en una cubeta</div></div>
+          <div style="display:flex;gap:12px;align-items:center"><span style="width:34px;height:34px;flex:none;border-radius:50%;background:rgba(127,178,255,.18);color:#7FB2FF;display:flex;align-items:center;justify-content:center;font:700 12px/1 'JetBrains Mono',monospace">2</span><div style="font:400 12.5px/1.45 'Karla',sans-serif;color:rgba(244,247,255,.8)">Le echas agua a chorro</div></div>
+          <div style="display:flex;gap:12px;align-items:center"><span style="width:34px;height:34px;flex:none;border-radius:50%;background:#E8C87A;color:#0B1020;display:flex;align-items:center;justify-content:center;font:700 12px/1 'JetBrains Mono',monospace">3</span><div style="font:400 12.5px/1.45 'Karla',sans-serif;color:rgba(244,247,255,.8)">Erupciona en 3 segundos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 24px 24px"><div style="border-top:1px solid rgba(244,247,255,.14);padding-top:14px;font:400 11px/1.65 'Karla',sans-serif;color:rgba(244,247,255,.65)"><b style="font-weight:700;color:#F4F7FF">Movimiento:</b> el producto es el efecto — video en loop, nieve cayendo, escalado al hacer scroll.<br><b style="font-weight:700;color:#F4F7FF">Tono:</b> espectáculo. Frases cortas, verbos fuertes.<br><b style="font-weight:700;color:#F4F7FF">Íconos:</b> números y formas geométricas, no pictogramas.<br><b style="font-weight:700;color:#F4F7FF">Riesgo:</b> el oscuro exige buena foto/video; con material mixto se nota más.</div></div>
+</div></div>
+
+</div>
+<p class="dv-next">Prueba: “vamos con <a class="dv-oid" href="#1b">1b</a> pero con el rojo de <a class="dv-oid" href="#1a">1a</a>” · “quiero el hero de <a class="dv-oid" href="#1c">1c</a> en el sistema de <a class="dv-oid" href="#1a">1a</a>” · “armemos la landing completa de <a class="dv-oid" href="#1a">1a</a> en desktop y móvil”</p>
+</section>
+
+</x-dc>
+</body>
+</html>

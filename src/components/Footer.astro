@@ -1,0 +1,93 @@
+---
+import { footer, site } from '../lib/content';
+import { contacto } from '../lib/contact';
+
+const anio = new Date().getFullYear();
+---
+
+<footer data-oscuro>
+  <div class="superior">
+    <div class="marca">
+      <span class="wordmark">{site.nombre}</span>
+      <p>{footer.descripcion}</p>
+    </div>
+    <div class="columna">
+      <span class="titulo-columna">{footer.columnaSitio.titulo}</span>
+      {footer.columnaSitio.enlaces.map((enlace) => <a href={enlace.href}>{enlace.texto}</a>)}
+    </div>
+    <div class="columna">
+      <span class="titulo-columna">{footer.columnaContacto.titulo}</span>
+      <a class="whatsapp" href={contacto.waLink}>WhatsApp {contacto.whatsapp}</a>
+      <a href={contacto.mailLink}>{contacto.correo}</a>
+      <span class="ubicacion">{footer.columnaContacto.ubicacion}</span>
+    </div>
+  </div>
+  <div class="inferior">
+    <div class="inferior-interior">© {anio} {site.nombre}. {footer.derechos}</div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--ni-negro-pie);
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .superior {
+    max-width: var(--ni-ancho-max);
+    margin: 0 auto;
+    padding: clamp(32px, 4vw, 56px) var(--ni-margen);
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(24px, 3vw, 48px);
+    justify-content: space-between;
+  }
+  .marca {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 34ch;
+  }
+  .wordmark {
+    font: 400 clamp(26px, 3vw, 34px) / 1 'Sunday', cursive;
+    color: #fff;
+  }
+  .marca p {
+    margin: 0;
+    font: 400 13px/1.6 'Arimo', sans-serif;
+  }
+  .columna {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .titulo-columna {
+    font: 700 10.5px/1 'Arimo', sans-serif;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.62);
+  }
+  .columna a {
+    font: 400 13px/1 'Arimo', sans-serif;
+    color: rgba(255, 255, 255, 0.72);
+    transition: color var(--ni-transicion);
+  }
+  .columna a:hover {
+    color: #fff;
+  }
+  .columna a.whatsapp {
+    font-weight: 700;
+    color: #fff;
+  }
+  .ubicacion {
+    font: 400 13px/1.5 'Arimo', sans-serif;
+  }
+  .inferior {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .inferior-interior {
+    max-width: var(--ni-ancho-max);
+    margin: 0 auto;
+    padding: 18px var(--ni-margen);
+    font: 400 11.5px/1.5 'Arimo', sans-serif;
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>

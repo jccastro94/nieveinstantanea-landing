@@ -1,0 +1,115 @@
+---
+import { Picture } from 'astro:assets';
+import { como } from '../lib/content';
+import { foto } from '../lib/images';
+---
+
+<section id="como" aria-label="Cómo funciona">
+  <div class="ni-contenedor rejilla">
+    <div class="columna">
+      <div class="encabezado">
+        <span class="ni-eyebrow">{como.eyebrow}</span>
+        <h2 class="ni-h2">{como.titulo}</h2>
+      </div>
+      <ol>
+        {
+          como.pasos.map((paso, i) => (
+            <li>
+              <span class="numeral">{String(i + 1).padStart(2, '0')}</span>
+              <div class="paso-texto">
+                <h3>{paso.titulo}</h3>
+                <p>{paso.texto}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <div class="nota">
+        <p>{como.nota}</p>
+      </div>
+    </div>
+    <div class="foto" style={`aspect-ratio:${como.fotoRatio}`}>
+      <Picture
+        src={foto(como.foto)}
+        alt={como.fotoAlt}
+        formats={['avif', 'webp']}
+        widths={[480, 800, 1200, 1400]}
+        sizes="(max-width: 800px) 100vw, 50vw"
+        loading="lazy"
+        class="ni-img"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background: var(--ni-hueso);
+  }
+  .rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+  }
+  .columna {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 2.4vw, 30px);
+  }
+  .encabezado {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 1.8vw, 22px);
+  }
+  li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .numeral {
+    font: 400 var(--ni-display-num) / 0.85 'Sunday', cursive;
+    color: var(--ni-rojo-display);
+    flex: none;
+    width: 1.6em;
+  }
+  .paso-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  h3 {
+    margin: 0;
+    font: 700 var(--ni-subtitulo) / 1.3 'Arimo', sans-serif;
+  }
+  .paso-texto p {
+    margin: 0;
+    font: 400 var(--ni-cuerpo-sm) / 1.6 'Arimo', sans-serif;
+    color: var(--ni-gris);
+  }
+  .nota {
+    padding: 16px 18px;
+    background: #fff;
+    border-left: 3px solid var(--ni-verde);
+    border-radius: 0 8px 8px 0;
+  }
+  .nota p {
+    margin: 0;
+    font: 400 clamp(13px, 1.25vw, 15px) / 1.6 'Arimo', sans-serif;
+    color: var(--ni-negro);
+  }
+  .foto {
+    width: 100%;
+    border-radius: var(--ni-radio-foto);
+    overflow: hidden;
+    box-shadow: var(--ni-sombra-2);
+  }
+</style>

@@ -1,0 +1,83 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+import { site } from '../lib/content';
+import { datosEstructurados } from '../lib/seo';
+
+interface Props {
+  titulo?: string;
+  descripcion?: string;
+  conJsonLd?: boolean;
+}
+
+const { titulo = site.titulo, descripcion = site.descripcion, conJsonLd = true } = Astro.props;
+const canonical = new URL(Astro.url.pathname === '/' ? '/' : Astro.url.pathname, site.url).href;
+const ogImage = new URL('/og.jpg', site.url).href;
+---
+
+<!doctype html>
+<html lang="es-CR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link
+      rel="preload"
+      href="/fonts/Sunday-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/fonts/Arimo-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Arimo-Bold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.nombre} />
+    <meta property="og:locale" content="es_CR" />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={titulo} />
+    <meta name="twitter:description" content={descripcion} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {
+      conJsonLd &&
+        datosEstructurados().map((datos) => (
+          <script is:inline type="application/ld+json" set:html={JSON.stringify(datos)} />
+        ))
+    }
+
+    {
+      site.ga4MeasurementId && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${site.ga4MeasurementId}`}
+          />
+          <script
+            set:html={`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${site.ga4MeasurementId}', { anonymize_ip: true });`}
+          />
+        </>
+      )
+    }
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

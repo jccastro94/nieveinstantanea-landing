@@ -1,0 +1,113 @@
+---
+import { products } from '../lib/content';
+import ProductCard from './ProductCard.astro';
+---
+
+<section id="productos" aria-label="Productos">
+  <div class="ni-contenedor columna">
+    <div class="encabezado">
+      <span class="ni-eyebrow">{products.eyebrow}</span>
+      <h2 class="ni-h2">{products.titulo}</h2>
+    </div>
+
+    <div class="rejilla">
+      {products.productos.map((producto) => <ProductCard producto={producto} />)}
+    </div>
+
+    <div class="comparativo">
+      <div class="comparativo-encabezado">
+        <h3>{products.comparativo.titulo}</h3>
+        <p>{products.comparativo.bajada}</p>
+      </div>
+      <div class="opciones">
+        {
+          products.comparativo.opciones.map((opcion) => (
+            <div class:list={['opcion', opcion.familia]}>
+              <h4>{opcion.titulo}</h4>
+              <p>{opcion.texto}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background: var(--ni-blanco);
+  }
+  .columna {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 3vw, 40px);
+  }
+  .encabezado {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 60ch;
+  }
+  .rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+    gap: clamp(16px, 2vw, 26px);
+  }
+  .comparativo {
+    border-top: var(--ni-borde-sutil);
+    padding-top: clamp(24px, 3vw, 38px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 2vw, 24px);
+  }
+  .comparativo-encabezado {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 60ch;
+  }
+  .comparativo-encabezado h3 {
+    margin: 0;
+    font: 400 var(--ni-display-3) / 1.05 'Sunday', cursive;
+  }
+  .comparativo-encabezado p {
+    margin: 0;
+    font: 400 clamp(14px, 1.35vw, 16px) / 1.65 'Arimo', sans-serif;
+    color: var(--ni-gris);
+  }
+  .opciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(14px, 1.8vw, 22px);
+  }
+  .opcion {
+    border-radius: 0 8px 8px 0;
+    padding: clamp(16px, 1.8vw, 22px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .opcion.instantanea {
+    border-left: 3px solid var(--ni-rojo);
+    background: var(--ni-hueso);
+  }
+  .opcion.artificial {
+    border-left: 3px solid var(--ni-azul);
+    background: var(--ni-azul-fondo);
+  }
+  .opcion h4 {
+    margin: 0;
+    font: 700 clamp(14.5px, 1.4vw, 16px) / 1.35 'Arimo', sans-serif;
+  }
+  .opcion.instantanea h4 {
+    color: var(--ni-rojo-hover);
+  }
+  .opcion.artificial h4 {
+    color: var(--ni-azul-texto);
+  }
+  .opcion p {
+    margin: 0;
+    font: 400 clamp(13px, 1.25vw, 14.5px) / 1.6 'Arimo', sans-serif;
+    color: var(--ni-gris);
+  }
+</style>

@@ -1,0 +1,93 @@
+---
+import { header, site } from '../lib/content';
+---
+
+<header class="cabecera">
+  <div class="barra-roja">
+    <div class="barra-interior">
+      <a class="wordmark" href="#top">{site.nombre}</a>
+      <a class="cta" href={header.cta.href}>{header.cta.texto}</a>
+    </div>
+  </div>
+  <nav aria-label="Secciones del sitio">
+    <div class="nav-interior">
+      {
+        header.nav.map((enlace) => (
+          <a class:list={['nav-enlace', { destacado: enlace.destacado }]} href={enlace.href}>
+            {enlace.texto}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<style>
+  .cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--ni-negro);
+    color: #fff;
+  }
+  .barra-roja {
+    background: var(--ni-rojo);
+  }
+  .barra-interior {
+    max-width: var(--ni-ancho-max);
+    margin: 0 auto;
+    padding: 12px clamp(16px, 4vw, 64px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .wordmark {
+    font: 400 clamp(24px, 4.4vw, 40px) / 1 'Sunday', cursive;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px clamp(14px, 1.6vw, 20px);
+    border-radius: var(--ni-radio-pill);
+    background: #fff;
+    color: var(--ni-rojo-hover);
+    font: 700 clamp(12px, 1.2vw, 14px) / 1 'Arimo', sans-serif;
+    white-space: nowrap;
+    transition: background var(--ni-transicion), color var(--ni-transicion);
+  }
+  .cta:hover {
+    background: var(--ni-negro);
+    color: #fff;
+  }
+  nav {
+    overflow-x: auto;
+  }
+  .nav-interior {
+    max-width: var(--ni-ancho-max);
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 64px);
+    display: flex;
+    gap: clamp(18px, 2.4vw, 34px);
+    align-items: center;
+    min-height: 42px;
+    white-space: nowrap;
+  }
+  .nav-enlace {
+    font: 700 12.5px/1 'Arimo', sans-serif;
+    color: rgba(255, 255, 255, 0.82);
+    transition: color var(--ni-transicion);
+  }
+  .nav-enlace:hover {
+    color: #fff;
+  }
+  .nav-enlace.destacado {
+    color: var(--ni-rojo-claro);
+  }
+  .nav-enlace.destacado:hover {
+    color: #fff;
+  }
+</style>

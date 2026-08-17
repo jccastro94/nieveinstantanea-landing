@@ -1,0 +1,15 @@
+{
+  "badge": "HECHO EN COSTA RICA",
+  "titulo": "Nieve de verdad en un minuto",
+  "bajadaHtml": "Le agrega agua y el polvo crece <strong>200 %</strong>. Se siente fría, se ve real y se puede volver a usar. Nieve para decorar su casa en un país donde nunca nieva.",
+  "ctaPrimario": { "texto": "Dónde comprarla", "href": "#donde" },
+  "ctaSecundario": { "texto": "Ver ideas", "href": "#ideas" },
+  "chips": [
+    { "texto": "Inodora" },
+    { "texto": "Hipoalergénica" },
+    { "texto": "Reutilizable", "verde": true }
+  ],
+  "foto": "IMG_2923-web.jpg",
+  "fotoAlt": "Botellas de Nieve Instantánea sobre nieve artificial con piñas de pino",
+  "fotoRatio": "1400/1027"
+}

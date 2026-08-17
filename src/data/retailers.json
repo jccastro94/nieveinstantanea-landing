@@ -1,0 +1,20 @@
+{
+  "titulo": "¿Dónde la compro?",
+  "bajada": "Esta temporada la encuentra en cinco cadenas, en el pasillo de decoración navideña.",
+  "cadenas": [
+    { "nombre": "Sol Naciente", "url": "https://www.solnaciente.co.cr", "logo": "logo-solnaciente.png" },
+    { "nombre": "Auto Mercado", "url": "https://www.automercado.cr", "logo": "logo-automercado.png" },
+    { "nombre": "Almacenes El Rey", "url": "https://www.almaceneselrey.com", "logo": "logo-elrey.png" },
+    { "nombre": "MegaSuper", "url": "https://www.megasuper.com", "logo": "logo-megasuper.png" },
+    { "nombre": "EPA", "url": "https://www.epa.com.cr", "logo": "logo-epa.png" }
+  ],
+  "foto": "ninos-jugando-web.jpg",
+  "fotoAlt": "Tres niños jugando con Nieve Instantánea preparada, rodeados de frascos y bolsas del producto",
+  "fotoRatio": "1400/805",
+  "fotoPie": "Búsquela en el pasillo de decoración navideña.",
+  "respaldo": {
+    "pregunta": "¿No la encuentra? ¡Escríbanos!",
+    "boton": "Preguntar por WhatsApp",
+    "notaHtml": "Le contestamos el mismo día. También por correo: <a data-mail></a>"
+  }
+}

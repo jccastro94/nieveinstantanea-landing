@@ -1,0 +1,157 @@
+---
+import { Picture } from 'astro:assets';
+import type { products } from '../lib/content';
+import { foto } from '../lib/images';
+
+interface Props {
+  producto: (typeof products)['productos'][number];
+}
+
+const { producto } = Astro.props;
+const esContain = producto.fotoAjuste !== 'cover';
+---
+
+<article>
+  <div
+    class:list={[
+      'marco-foto',
+      { hueso: producto.fotoAjuste === 'contain-hueso', azul: producto.fotoAjuste === 'contain-azul' },
+    ]}
+  >
+    <Picture
+      src={foto(producto.foto)}
+      alt={producto.fotoAlt}
+      formats={['avif', 'webp']}
+      widths={[400, 700, 1000]}
+      sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 25vw"
+      loading="lazy"
+      class={esContain ? 'ni-img-contain' : 'ni-img-cover'}
+    />
+  </div>
+  <div class="cuerpo">
+    <div class="chips">
+      {producto.chips.map((chip) => <span class:list={['chip', chip.estilo]}>{chip.texto}</span>)}
+    </div>
+    <h3>{producto.nombre}</h3>
+    <p class="descripcion">{producto.descripcion}</p>
+    <ul>
+      {
+        producto.datos.map((dato) => (
+          <li>
+            {dato.etiqueta}
+            <span>{dato.valor}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <a
+      class:list={[
+        'ni-boton',
+        'boton-tarjeta',
+        producto.familia === 'artificial' ? 'ni-boton--azul' : 'ni-boton--rojo',
+      ]}
+      href="#donde"
+    >
+      Dónde comprarla
+    </a>
+  </div>
+</article>
+
+<style>
+  article {
+    border: var(--ni-marco);
+    border-radius: var(--ni-radio-tarjeta);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .marco-foto {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+  .marco-foto.hueso {
+    background: var(--ni-hueso);
+    border-bottom: var(--ni-marco);
+  }
+  .marco-foto.azul {
+    background: var(--ni-azul-fondo);
+    border-bottom: var(--ni-marco);
+  }
+  .cuerpo {
+    padding: clamp(16px, 2vw, 22px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .chips {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    padding: 5px 9px;
+    border-radius: var(--ni-radio-chip);
+    font: 700 10px/1 'Arimo', sans-serif;
+    letter-spacing: 0.08em;
+  }
+  .chip.rojo-tenue {
+    background: var(--ni-rojo-tenue);
+    color: var(--ni-rojo-hover);
+  }
+  .chip.oro {
+    background: var(--ni-oro);
+    color: var(--ni-negro);
+    letter-spacing: 0.06em;
+  }
+  .chip.azul {
+    background: var(--ni-azul);
+    color: #fff;
+  }
+  .chip.azul-tenue {
+    background: rgba(0, 80, 182, 0.12);
+    color: var(--ni-azul-texto);
+  }
+  h3 {
+    margin: 0;
+    font: 700 var(--ni-titulo) / 1.25 'Arimo', sans-serif;
+  }
+  .descripcion {
+    margin: 0;
+    font: 400 var(--ni-cuerpo-sm) / 1.6 'Arimo', sans-serif;
+    color: var(--ni-gris);
+    flex: 1;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font: 400 13px/1.4 'Arimo', sans-serif;
+    color: var(--ni-gris);
+  }
+  li:first-child {
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(17, 18, 19, 0.09);
+  }
+  li span {
+    font-weight: 700;
+    color: var(--ni-negro);
+  }
+  .boton-tarjeta {
+    margin-top: 4px;
+    padding: 14px;
+    font-size: 14px;
+    min-height: 48px;
+  }
+</style>

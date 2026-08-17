@@ -1,0 +1,11 @@
+{
+  "cta": { "texto": "Dónde comprarla", "href": "#donde" },
+  "nav": [
+    { "texto": "Productos", "href": "#productos" },
+    { "texto": "Cómo funciona", "href": "#como" },
+    { "texto": "Ideas para decorar", "href": "#ideas" },
+    { "texto": "Preguntas", "href": "#preguntas" },
+    { "texto": "Nosotros", "href": "#nosotros" },
+    { "texto": "Mayoreo", "href": "#mayoreo", "destacado": true }
+  ]
+}

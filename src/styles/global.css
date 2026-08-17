@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Reglas globales del sitio (complementan tokens.css)
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* No usar overflow-x:hidden aquí: promueve overflow-y a auto y rompe el
+   position:sticky del header. clip no crea contexto de scroll. */
+.ni-envoltura {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+section {
+  scroll-margin-top: var(--ni-header-alto);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* --- Acordeón nativo ------------------------------------------------------ */
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .ni-mas {
+  transform: rotate(45deg);
+}
+
+/* --- Foco visible --------------------------------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--ni-rojo);
+  outline-offset: 2px;
+}
+[data-oscuro] :focus-visible {
+  outline-color: #fff;
+}
+
+/* --- Contenedor y encabezados de sección --------------------------------- */
+.ni-contenedor {
+  max-width: var(--ni-ancho-max);
+  margin: 0 auto;
+  padding: var(--ni-seccion-y) var(--ni-margen);
+}
+
+.ni-eyebrow {
+  font: 700 var(--ni-etiqueta) / 1 'Arimo', sans-serif;
+  letter-spacing: 0.16em;
+  color: var(--ni-rojo-texto);
+  text-transform: uppercase;
+}
+
+.ni-h2 {
+  margin: 0;
+  font: 400 var(--ni-display-2) / 1.02 'Sunday', cursive;
+  color: inherit;
+}
+
+/* --- Botones -------------------------------------------------------------- */
+.ni-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 17px 24px;
+  border-radius: var(--ni-radio-pill);
+  font: 700 var(--ni-boton) / 1 'Arimo', sans-serif;
+  min-height: 48px;
+  transition: background var(--ni-transicion), color var(--ni-transicion),
+    border-color var(--ni-transicion);
+  text-align: center;
+}
+.ni-boton--rojo {
+  background: var(--ni-rojo);
+  color: #fff;
+  min-height: 52px;
+}
+.ni-boton--rojo:hover {
+  background: var(--ni-rojo-hover);
+  color: #fff;
+}
+.ni-boton--azul {
+  background: var(--ni-azul);
+  color: #fff;
+}
+.ni-boton--azul:hover {
+  background: var(--ni-azul-hover);
+  color: #fff;
+}
+.ni-boton--blanco {
+  background: #fff;
+  color: var(--ni-rojo-hover);
+  min-height: 54px;
+}
+.ni-boton--blanco:hover {
+  background: var(--ni-negro);
+  color: #fff;
+}
+.ni-boton--contorno-claro {
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+  min-height: 52px;
+}
+.ni-boton--contorno-claro:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* --- Imágenes (clases globales: <Picture>/<Image> no heredan el scope) ---- */
+.ni-img-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ni-img-contain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.ni-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Punto verde de los botones de WhatsApp */
+.ni-punto-wa {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ni-verde);
+  display: block;
+  flex: none;
+}
+.ni-punto-wa--claro {
+  background: #8ff0a8;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "nieveinstantanea-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing de Nieve Instantánea — nieveinstantanea.com",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "fonts": "node scripts/convert-fonts.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.13.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "sharp": "^0.34.3",
+    "typescript": "^5.9.2",
+    "wawoff2": "^2.0.1"
+  }
+}

@@ -1,0 +1,76 @@
+---
+import { faq } from '../lib/content';
+---
+
+<section id="preguntas" aria-label="Preguntas frecuentes">
+  <div class="contenedor">
+    <div class="encabezado">
+      <span class="ni-eyebrow">{faq.eyebrow}</span>
+      <h2 class="ni-h2">{faq.titulo}</h2>
+    </div>
+    <div class="lista">
+      {
+        faq.preguntas.map((entrada) => (
+          <details>
+            <summary>
+              {entrada.pregunta}
+              <span class="ni-mas">+</span>
+            </summary>
+            <p set:html={entrada.respuestaHtml} />
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background: var(--ni-blanco);
+  }
+  .contenedor {
+    max-width: var(--ni-ancho-max-faq);
+    margin: 0 auto;
+    padding: var(--ni-seccion-y) var(--ni-margen);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 2.6vw, 32px);
+  }
+  .encabezado {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  details {
+    border: 1.5px solid rgba(17, 18, 19, 0.14);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    font: 700 clamp(14.5px, 1.4vw, 17px) / 1.4 'Arimo', sans-serif;
+  }
+  .ni-mas {
+    flex: none;
+    font: 400 20px/1 'Arimo', sans-serif;
+    color: var(--ni-rojo-texto);
+    transition: transform var(--ni-transicion);
+  }
+  details p {
+    margin: 12px 0 0;
+    font: 400 var(--ni-cuerpo-sm) / 1.65 'Arimo', sans-serif;
+    color: var(--ni-gris);
+  }
+  details p :global(strong) {
+    font-weight: 700;
+    color: var(--ni-negro);
+  }
+</style>

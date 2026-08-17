@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+jobs:
+  build:
+    name: Verificar y construir el sitio
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Chequeo de tipos y contenido
+        run: npm run check
+
+      - name: Construir
+        run: npm run build
+
+  terraform:
+    name: Validar Terraform
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '~> 1.10'
+
+      - name: Formato
+        run: terraform fmt -check -recursive infra/
+
+      - name: Validar bootstrap
+        working-directory: infra/bootstrap
+        run: |
+          terraform init -backend=false
+          terraform validate
+
+      - name: Validar main
+        working-directory: infra/main
+        run: |
+          terraform init -backend=false
+          terraform validate

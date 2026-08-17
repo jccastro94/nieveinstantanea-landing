@@ -1,0 +1,72 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# OIDC hacia AWS: sin llaves de larga vida.
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-produccion
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Construir y publicar
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Chequeo de tipos y contenido
+        run: npm run check
+
+      - name: Construir
+        run: npm run build
+
+      - name: Credenciales AWS (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Publicar activos con hash (caché de 1 año)
+        run: |
+          aws s3 sync dist/ "s3://${{ vars.SITE_BUCKET }}" \
+            --exclude "*" --include "_astro/*" \
+            --cache-control "public,max-age=31536000,immutable" \
+            --delete
+
+      - name: Publicar fuentes e íconos (caché de 7 días)
+        run: |
+          aws s3 sync dist/ "s3://${{ vars.SITE_BUCKET }}" \
+            --exclude "*" \
+            --include "fonts/*" --include "og.jpg" \
+            --include "favicon*" --include "apple-touch-icon.png" \
+            --cache-control "public,max-age=604800"
+
+      - name: Publicar HTML y metadatos (sin caché)
+        run: |
+          aws s3 sync dist/ "s3://${{ vars.SITE_BUCKET }}" \
+            --exclude "_astro/*" --exclude "fonts/*" \
+            --exclude "og.jpg" --exclude "favicon*" --exclude "apple-touch-icon.png" \
+            --cache-control "no-cache" \
+            --delete
+
+      - name: Invalidar CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"

@@ -1,0 +1,53 @@
+---
+import { Picture } from 'astro:assets';
+import { nosotros } from '../lib/content';
+import { foto } from '../lib/images';
+---
+
+<section id="nosotros" aria-label="Nosotros">
+  <div class="ni-contenedor rejilla">
+    <div class="columna">
+      <span class="ni-eyebrow">{nosotros.eyebrow}</span>
+      <h2 class="ni-h2">{nosotros.titulo}</h2>
+      <p>{nosotros.texto}</p>
+    </div>
+    <div class="marco-foto" style={`aspect-ratio:${nosotros.fotoRatio}`}>
+      <Picture
+        src={foto(nosotros.foto)}
+        alt={nosotros.fotoAlt}
+        formats={['avif', 'webp']}
+        widths={[480, 800, 1200]}
+        sizes="(max-width: 800px) 100vw, 50vw"
+        loading="lazy"
+        class="ni-img"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background: var(--ni-hueso);
+  }
+  .rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+  }
+  .columna {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .columna p {
+    margin: 0;
+    font: 400 var(--ni-cuerpo) / 1.7 'Arimo', sans-serif;
+    color: var(--ni-gris);
+  }
+  .marco-foto {
+    width: 100%;
+    border-radius: var(--ni-radio-foto);
+    overflow: hidden;
+  }
+</style>

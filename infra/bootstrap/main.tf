@@ -13,6 +13,13 @@ terraform {
 
 provider "aws" {
   region = var.region
+
+  default_tags {
+    tags = {
+      Project   = "nieveinstantanea"
+      ManagedBy = "terraform"
+    }
+  }
 }
 
 variable "region" {

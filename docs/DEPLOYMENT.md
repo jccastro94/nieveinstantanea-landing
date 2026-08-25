@@ -40,9 +40,10 @@ y el rol OIDC que GitHub Actions asume para desplegar.
 > Si el primer `apply` se queda esperando en la validación del certificado,
 > haga el paso 3 y vuelva a correr `terraform apply`.
 >
-> Si la cuenta ya tiene el proveedor OIDC de GitHub
-> (`token.actions.githubusercontent.com`), aplique con
-> `-var create_github_oidc_provider=false`.
+> El proveedor OIDC de GitHub ya existe en la cuenta (lo creó el otro proyecto
+> que la comparte), así que `create_github_oidc_provider` está en `false` por
+> defecto y Terraform referencia el existente. No hace falta ninguna bandera.
+> Solo póngalo en `true` si algún día despliega en una cuenta nueva.
 
 ## 3. Apuntar el dominio
 

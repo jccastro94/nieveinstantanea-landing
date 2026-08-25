@@ -16,7 +16,10 @@ variable "github_repository" {
 }
 
 variable "create_github_oidc_provider" {
-  description = "false si la cuenta ya tiene el proveedor OIDC de GitHub Actions"
+  # La cuenta 275459308785 YA tiene el proveedor OIDC de GitHub Actions: lo creó
+  # el otro proyecto que comparte la cuenta. AWS solo permite uno por cuenta, así
+  # que aquí se referencia el existente en vez de crear un duplicado.
+  description = "true solo en una cuenta que AÚN no tenga el proveedor OIDC de GitHub"
   type        = bool
-  default     = true
+  default     = false
 }

@@ -32,11 +32,21 @@ data "aws_iam_policy_document" "confianza_github" {
       values   = ["sts.amazonaws.com"]
     }
 
-    # Solo la rama main de este repositorio puede desplegar.
+    # GitHub cambia el claim `sub` según el job declare `environment:` o no:
+    #   con environment: production  -> repo:OWNER/REPO:environment:production
+    #   sin environment              -> repo:OWNER/REPO:ref:refs/heads/main
+    # deploy.yml usa environment: production, así que ese es el que llega hoy.
+    # Se permiten ambos para que el workflow funcione en cualquiera de los casos.
+    #
+    # OJO: el sub de environment NO incluye la rama. La garantía de que solo
+    # main despliega la da la regla de ramas del entorno `production` en GitHub.
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:${var.github_repository}:ref:refs/heads/main"]
+      values = [
+        "repo:${var.github_repository}:environment:production",
+        "repo:${var.github_repository}:ref:refs/heads/main",
+      ]
     }
   }
 }

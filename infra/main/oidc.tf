@@ -32,7 +32,9 @@ data "aws_iam_policy_document" "confianza_github" {
       values   = ["sts.amazonaws.com"]
     }
 
-    # GitHub cambia el claim `sub` según el job declare `environment:` o no:
+    # El prefijo del sub es inmutable (ver github_oidc_subject_prefix).
+    # Sobre ese prefijo, GitHub cambia el sufijo según el job declare
+    # `environment:` o no:
     #   con environment: production  -> repo:OWNER/REPO:environment:production
     #   sin environment              -> repo:OWNER/REPO:ref:refs/heads/main
     # deploy.yml usa environment: production, así que ese es el que llega hoy.
@@ -44,8 +46,8 @@ data "aws_iam_policy_document" "confianza_github" {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
       values = [
-        "repo:${var.github_repository}:environment:production",
-        "repo:${var.github_repository}:ref:refs/heads/main",
+        "${var.github_oidc_subject_prefix}:environment:production",
+        "${var.github_oidc_subject_prefix}:ref:refs/heads/main",
       ]
     }
   }

@@ -23,3 +23,21 @@ variable "create_github_oidc_provider" {
   type        = bool
   default     = false
 }
+
+variable "github_oidc_subject_prefix" {
+  # GitHub tiene activados los "immutable subject claims" en este repositorio,
+  # así que el claim `sub` del token OIDC NO es "repo:owner/nombre" sino que
+  # lleva los IDs numéricos inmutables del dueño y del repositorio:
+  #
+  #   repo:jccastro94@73132288/nieveinstantanea-landing@1337666342
+  #
+  # Esos IDs no cambian aunque se renombre la cuenta o el repositorio — ese es
+  # justamente el punto de la función: que nadie pueda registrar el nombre
+  # viejo y heredar este acceso a AWS.
+  #
+  # Para reobtenerlo:
+  #   gh api repos/OWNER/REPO/actions/oidc/customization/sub
+  description = "Prefijo del claim sub de GitHub OIDC (formato inmutable)"
+  type        = string
+  default     = "repo:jccastro94@73132288/nieveinstantanea-landing@1337666342"
+}
